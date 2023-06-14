@@ -1,0 +1,217 @@
+<div id="content">
+
+    <div class="wrapper">
+        <div class="left-menu">
+            <div class="r_nav">
+                <h2><a href="chudehoa.html"> Topic</a></h2>
+                <ul>
+                    <li><a href="hoasn.html">Birthday Flowers</a></li>
+                    <li><a href="hoakt.html">Grand opening Flower</a></li>
+                    <li><a href="hoacm.html">Congratulations Flowers</a></li>
+                    <li><a href="hoacb.html">Condolence Flowers</a></li>
+                </ul>
+            </div>
+        </div>
+        
+
+        <!-- Danh sách các sản phẩm theo từng chủ đề -->
+        <div class="page-cat" id="hoa-sinh-nhat">
+            <h2><a href="hoasn.html">Birthday Flowers</a></h2>
+            <div class="listSp" id="sinh-nhat-products"></div>
+            <a href="hoasn.html"><button class="view-more" data-category="sinh-nhat">See More</button> </a>
+        </div>
+        
+        <div class="page-cat" id="hoa-khai-truong">
+            <h2><a href="hoakt.html">Grand opening Flower</a></h2>
+            <div class="listSp" id="khai-truong-products"></div>
+            <a href="hoakt.html"><button class="view-more" data-category="khai-truong">See More</button></a>
+        </div>
+        <div class="page-cat" id="hoa-chuc-mung">
+            <h2><a href="hoacm.html">Congratulations Flowers</a></h2>
+            <div class="listSp" id="chuc-mung-products"></div>
+            <a href="hoacm.html"><button class="view-more" data-category="chuc-mung">See More</button></a>
+        </div>
+        <div class="page-cat" id="hoa-chia-buon">
+            <h2><a href="hoacb.html">Condolence Flowers</a></h2>
+            <div class="listSp" id="chia-buon-products"></div>
+            <a href="hoacb.html"><button class="view-more" data-category="chia-buon">See More</button></a>
+        </div>
+        </div>
+
+
+    <!-- Declare an array containing product information by topic
+    const arrSpSinhNhat = [
+    {name: "Innocent first love", link: "hoa.html",img: "sn1.jpg", price: "250.000 đ" },
+    {name: "Romance 3", link: "",img: "sn2.jpg", price: "800.000 đ" },
+    {name: "Sweet Love", link: "",img: "sn3.jpg", price: "350.000 đ" },
+    {name: "Charming Blossoms", link: "",img: "sn4.jpg", price: "450.000 đ" },
+    {name: "Lover", link: "",img: "sn5.jpg", price: "350.000 đ" },
+    {name: "The greatest thing", link: "",img: "sn6.jpg", price: "450.000 đ" },
+    {name: "All of love", link: "",img: "sn7.jpg", price: "550.000 đ" },
+    {name: "Only rose premium 3", link: "",img: "sn8.jpg", price: "750.000 đ" },
+    {name: "Sound of love", link: "",img: "sn9.jpg", price: "350.000 đ" },
+    {name: "Thousand words of love ", link: "",img: "sn10.jpg", price: "550.000 đ" },
+    {name: "You are beautiful", link: "",img: "sn11.jpg", price: "900.000 đ" },
+    {name: "Cuti bear and rose 2", link: "",img: "sn12.jpg", price: "1.200.000 đ" },
+    {name: "Pink Box", link: "",img: "sn13.jpg", price: "1.000.000 đ" },
+    {name: "Jolie", link: "",img: "sn14.jpg", price: "1.500.000 đ" },
+    {name: "Pink clouds", link: "",img: "sn15.jpg", price: "750.000 đ" },
+    {name: "Proud of you", link: "",img: "sn16.jpg", price: "700.000 đ" },
+    
+    ];
+    
+    const arrSpKhaiTruong = [
+    { name: "Paty",img: "hkt1.jpg", link: "", price: "950.000 đ" },
+    { name: "Bright 3",img: "hkt2.png", link: "", price: "800.000 đ" },
+    { name: "Congratulation shelf 07",img: "hkt3.jpg", link: "", price: "1.000.000 đ" },
+    { name: "Luxury vase 22",img: "hkt4.jpg", link: "", price: "1.700.000 đ" },
+    { name: "Luxury vase 11",img: "hkt5.jpg", link: "", price: "1.600.000 đ" },
+    { name: "Perfection 03",img: "hkt6.jpg", link: "", price: "1.350.000 đ" },
+    { name: "Great Achievement",img: "hkt7.jpg", link: "", price: "1.200.000 đ" },
+    { name: "Congratulations 4",img: "htk8.png", link: "", price: "2.500.000 đ" },
+    { name: "Bonjour",img: "hkt9.jpg", link: "", price: "1.200.000 đ" },
+    { name: "Luxury vase 12",img: "hkt10.jpg", link: "", price: "2.200.000 đ" },
+    { name: "Perfection 02",img: "hkt11.jpg", link: "", price: "1.400.000 đ" },
+    { name: "Show The Beauti 2",img: "hkt12.jpg", link: "", price: "1.300.000 đ" },
+    { name: "Luxury vase 6",img: "hkt13.jpg", link: "", price: "3.500.000 đ" },
+    { name: "Thrive",img: "hkt14.jpg", link: "", price: "2.500.000 đ" },
+    { name: "Peak",img: "hkt15.jpg", link: "", price: "3.000.000 đ" },
+    { name: "Spring garden",img: "hkt16.png", link: "", price: "925.000 đ" },
+    
+    ];
+    
+    const arrSpChucMung = [
+    { name: "Congrats",img: "hcm1.jpg", link: "", price: "500.000 đ" },
+    { name: "Spring Ưaltz",img: "hcm2.jpg", link: "", price: "550.000 đ" },
+    { name: "Story Of The Sun",img: "hcm3.jpg", link: "", price: "750.000 đ" },
+    { name: "Congratulation Chelf 02",img: "hcm4.jpg", link: "", price: "800.000 đ" },
+    { name: "Congrats Mini Size 2",img: "hcm5.png", link: "", price: "900.000 đ" },
+    { name: "Great Achievement",img: "hcm6.jpg", link: "", price: "1.200.000 đ" },
+    { name: "Luxury Vase 23",img: "hcm7.jpg", link: "", price: "1.800.000 đ" },
+    { name: "Perfection 02",img: "hcm8.jpg", link: "", price: "1.400.000 đ" },
+    { name: "Congrats Mini Size 1",img: "hcm9.jpg", link: "", price: "950.000 đ" },
+    { name: "Glass Vase 4",img: "hcm10.jpg", link: "", price: "1.100.000 đ" },
+    { name: " Happy Flowers",img: "hcm11.jpg", link: "", price: "1.700.000 đ" },
+    { name: "Bright Day",img: "hcm12.jpg", link: "", price: "1.000.000 đ" },
+    { name: "Luxury Vase 22",img: "hcm13.jpg", link: "", price: "1.700.000 đ" },
+    { name: "Perfection 01",img: "hcm14.jpg", link: "", price: "1.700.000 đ" },
+    { name: "Premium Vase 1",img: "hcm15.jpg", link: "", price: "2.800.000 đ" },
+    { name: "Premium Vase 4",img: "hcm16.jpg", link: "", price: "6.000.000 đ" },
+    ];
+    
+    const arrSpChiaBuon = [
+    { name: "Sincerely Distribute 3",img: "hcb1.jpg", link: "", price: "2.650.000 đ" },
+    { name: "Bye",img: "hcb2.jpg", link: "", price: "650.000 đ" },
+    { name: "Sincerely Distribute 1",img: "hcb3.jpg", link: "", price: "750.000 đ" },
+    { name: "Condolence Shelf 04",img: "hcb4.jpg", link: "", price: "850.000 đ" },
+    { name: "Condolence Shelf 02",img: "hcb5.jpg", link: "", price: "650.000 đ" },
+    { name: "Deep condolences",img: "hcb6.jpg", link: "", price: "850.000 đ" },
+    { name: "Wishes",img: "hcb7.png", link: "", price: "1.000.000 đ" },
+    { name: "Stream Of Memories",img: "hcb8.jpg", link: "", price: "800.000 đ" },
+    { name: "Separation",img: "hcb9.jpg", link: "", price: "1.500.000 đ" },
+    { name: "Pray",img: "hcb10.jpg", link: "", price: "1.500.000 đ" },
+    { name: "Desire",img: "hcb11.jpg", link: "", price: "1.500.000 đ" },
+    { name: "Condolence Shelf 01",img: "hcb12.jpg", link: "", price: "600.000 đ" },
+    { name: "Expansive",img: "hcb13.jpg", link: "", price: "1.200.000 đ" },
+    { name: "Rest in peace",img: "hcb14.png", link: "", price: "1.350.000 đ" },
+    { name: "Condolence 2",img: "hcb15.jpg", link: "", price: "1.500.000 đ" },
+    { name: "Condolence 4",img: "hcb16.jpg", link: "", price: "1.400.000" },
+    
+    ];
+    
+    // Declare variables to store HTML elements of product categories
+    const sinhNhatProducts = document.querySelector("#sinh-nhat-products");
+    const khaiTruongProducts = document.querySelector("#khai-truong-products");
+    const chucMungProducts = document.querySelector("#chuc-mung-products");
+    const chiaBuonProducts = document.querySelector("#chia-buon-products");
+    // Declare the renderProducts function to display the products in a category
+    function renderProducts(products, container, showAll) {
+    container.innerHTML ="" ;
+    const numProducts = showAll ? products.length : 8;
+    for (let i = 0; i < numProducts; i++) { const product=products[i]; const productElement=document.createElement("div");
+        productElement.innerHTML=` <div class='item'> 
+        <div class='i'>
+            <a href="${product.link}"><img src="hình-hoa-sn/${product.img}" alt=""></img></a>
+        </div>
+        <div class='t'>
+            <a href="hoa_khai_truong.html">${product.name}</a>
+            <span class='vn'>${product.price}</span>
+        </div>
+        </div>`;
+         container.appendChild(productElement);
+        }
+        };
+        // Declare the handleViewMoreClick function to handle the click event of the "See More" or "Collapse" button of each
+        product category:
+        function handleViewMoreClick(event) {
+        const category = event.target.getAttribute("data-category");
+        const container = document.getElementById(category + "-products");
+        const button = event.target;
+    
+        if (container.classList.contains("expanded")) {
+        container.classList.remove("expanded");
+        button.textContent = "See More";
+        renderProducts(getProductArray(category), container, false);
+        } else {
+        container.classList.add("expanded");
+        button.textContent = "Collapse";
+        renderProducts(getProductArray(category), container, true);
+        }
+        }
+        // Declare the getProductArray function to return the product array based on the category:
+        function getProductArray(category) {
+        switch (category) {
+        case "sinh-nhat":
+        return arrSpSinhNhat;
+        case "khai-truong":
+        return arrSpKhaiTruong;
+        case "chuc-mung":
+        return arrSpChucMung;
+        case "chia-buon":
+        return arrSpChiaBuon;
+        default:
+        return [];
+        }
+    
+        };
+    
+    
+        // Catching the event when clicking see more will display more products
+        const viewMoreButtons = document.querySelectorAll(".view-more");
+        viewMoreButtons.forEach((button) => {
+        button.addEventListener("click", handleViewMoreClick);
+        });
+    
+        // Thêm hàm để hiển thị trang hoa sinh nhật ban đầu với 8 sản phẩm
+        function renderInitialSinhNhatPage() {
+        const showAll = false;
+        renderProducts(arrSpSinhNhat, sinhNhatProducts, showAll);
+        };
+        function renderInitialKhaiTruongPage() {
+        const showAll = false;
+        renderProducts(arrSpKhaiTruong, khaiTruongProducts, showAll);
+        };
+        function renderInitialChucMungPage() {
+        const showAll = false;
+        renderProducts(arrSpChucMung, chucMungProducts, showAll);
+        };
+        function renderInitialChiaBuonPage() {
+        const showAll = false;
+        renderProducts(arrSpChiaBuon, chiaBuonProducts, showAll);
+        };
+    
+        // Gọi hàm để hiển thị trang hoa sinh nhật ban đầu sau khi tài liệu đã được tải
+        document.addEventListener("DOMContentLoaded", function() {
+        renderInitialSinhNhatPage();
+        });
+    
+        document.addEventListener("DOMContentLoaded", function() {
+        renderInitialKhaiTruongPage();
+        });
+        document.addEventListener("DOMContentLoaded", function() {
+        renderInitialChucMungPage();
+        });
+    
+        document.addEventListener("DOMContentLoaded", function() {
+        renderInitialChiaBuonPage();
+        });-->

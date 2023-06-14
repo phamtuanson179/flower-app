@@ -1,0 +1,621 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* CSS SLIDER */
+#slider {
+    width: 90%;
+    margin: 0 auto;
+    overflow: hidden;
+    margin-top: 110px;
+}
+
+
+.title-slider {
+    text-align: center;
+    padding: 12px 0 12px 0;
+}
+
+.title-document {
+    font-size: 14px;
+    font-family: 'Itim', cursive;
+    color: rgb(255, 0, 0);
+}
+
+.slider-imgs img {
+    width: 100%;
+}
+
+.slider-imgs {
+    display: flex;
+    width: 100%;
+    animation: slideshow 16s infinite;
+}
+
+.slider-imgs input {
+    display: none;
+}
+
+.lableslider {
+    display: flex;
+    justify-content: center;
+}
+
+#img1:checked~.imgslider1 {
+    margin-left: -100%;
+}
+
+#img2:checked~.imgslider2 {
+    margin-left: -200%;
+
+}
+
+#img3:checked~.imgslider3 {
+    margin-left: -300%;
+
+}
+
+#img4:checked~.imgslider4 {
+    margin-left: -400%;
+
+}
+
+
+@keyframes slideshow {
+    20% {
+        margin-left: 0;
+    }
+
+    30% {
+        margin-left: -100%;
+    }
+
+    40% {
+        margin-left: -100%;
+    }
+
+    50% {
+        margin-left: -200%;
+    }
+
+    60% {
+        margin-left: -200%;
+    }
+
+    70% {
+        margin-left: -300%;
+    }
+
+    80% {
+        margin-left: -300%;
+    }
+
+    90% {
+        margin-left: -400%;
+    }
+
+    100% {
+        margin-left: -400%;
+    }
+}
+
+/* FINISH CSS SLIDER */
+
+/* CSS LIST PRODUCTS */
+
+#slider .danh-sach-hoa-slider {
+    margin-top: 75px;
+
+    width: 85%;
+}
+
+#slider .anh-hoa {
+    float: left;
+    width: calc(100% / 6);
+    padding: 0px 11px;
+    transition: 0.5s;
+}
+
+#slider .list-anh-hoa {
+    width: 120px;
+    border-radius: 72px;
+}
+
+#slider .title-anh-hoa {
+    text-decoration: none;
+    font-size: 12px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    // opacity: 0.6;
+}
+
+#slider .title-anh-hoa a {
+    color: #333;
+    text-decoration: none;
+    font-family: 'Quicksand', sans-serif;
+
+}
+
+
+// .anh-hoa:hover {
+//     transform: scale(1.1);
+//     cursor: pointer;
+// }
+
+.list-anh-hoa:hover {
+    box-shadow: 0 0 10px rgb(228, 62, 90);
+}
+
+/* FINISH CSS LIST PRODUCTS */
+
+
+/* CSS HOT PRODUCTS */
+#wrapper {
+    max-width: 90%;
+    margin: 300px auto;
+    /* margin: 40px 0; */
+}
+
+.heading {
+    text-align: center;
+    margin: 40px 0;
+}
+
+h3 {
+    font-size: 18px;
+    color: rgb(235, 98, 144);
+    padding: 10px 20px;
+    text-transform: uppercase;
+    border: 1px solid #e0a0a0;
+    display: inline-block;
+    font-weight: 600;
+    border-radius: 20px;
+    font-family: 'Quicksand', sans-serif;
+    transition: 0.7s;
+}
+
+#wrapper .heading:hover h3 {
+    color: #fff;
+    background-color: rgb(228, 62, 90);
+    letter-spacing: 0.1em;
+    cursor: pointer;
+}
+
+ul.products {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+ul.products li {
+    padding-left: 15px;
+    padding-right: 15px;
+    flex-basis: 25%;
+}
+
+ul.products li img {
+    max-width: 100%;
+    height: auto;
+}
+
+ul.products li .products-top {
+    // position: relative;
+    overflow: hidden;
+}
+
+ul.products li .products-top .products-thumb {
+    display: block;
+}
+
+// ul.products li:hover .products-top .products-thumb img {
+//     // filter: opacity(80%);
+// }
+
+ul.products li .products-top .products-thumb img {
+    display: block;
+}
+
+ul.products li .products-top a.buy-now {
+    text-decoration: none;
+    text-align: center;
+    display: block;
+    background-color: rgb(228, 62, 90);
+    color: #fff;
+    padding: 10px 0;
+    position: absolute;
+    width: 100%;
+    bottom: -42px;
+    transition: 0.5s ease-in-out;
+    opacity: 0.85;
+    font-family: Itim, cursive;
+}
+
+ul.products li:hover a.buy-now {
+    bottom: 0px;
+}
+
+ul.products li .products-infor {
+    padding: 10px 0;
+}
+
+ul.products li .products-infor a {
+    display: block;
+    text-decoration: none;
+}
+
+ul.products li .products-infor a.products-cat {
+    font-size: 11px;
+    text-transform: uppercase;
+    color: #9e9e9e;
+    padding: 3px 0px;
+}
+
+ul.products li .products-infor a.products-name {
+    color: #334862;
+    padding: 3px 0;
+    text-align: center;
+    font-family: 'Quicksand', sans-serif;
+
+}
+
+ul.products li .products-infor .products-price1 {
+    color: rgb(228, 62, 90);
+    padding: 2px 0;
+    font-weight: bold;
+    position: absolute;
+    left: 120px;
+    font-size: 15px;
+    font-family: 'Quicksand', sans-serif;
+
+
+}
+
+ul.products li .products-infor .products-original-price1 {
+    position: absolute;
+    left: 212px;
+    top: 1193px;
+    text-decoration: line-through;
+    color: #9e9e9e;
+    font-size: 15px;
+}
+
+#wrapper .btn-them-vao-gio-hang {
+    position: absolute;
+    top: 1225px;
+    left: 11%;
+    padding: 8px 7px;
+    border: none;
+    border-radius: 15px;
+    background-color: rgb(228, 62, 90);
+    color: #fff;
+}
+
+#wrapper .btn-them-vao-gio-hang:hover {
+    cursor: pointer;
+    /* letter-spacing: 1px; */
+    background-color: rgb(235, 98, 144);
+}
+
+ul.products li .products-infor .products-price2,
+.products-price3 {
+    color: rgb(228, 62, 90);
+    padding: 2px 0;
+    font-weight: bold;
+    text-align: center;
+    font-size: 15px;
+    font-family: 'Quicksand', sans-serif;
+
+}
+
+ul.products li .products-infor .products-price4 {
+    color: rgb(228, 62, 90);
+    padding: 2px 0;
+    font-weight: bold;
+    position: absolute;
+    left: 77%;
+    font-family: 'Quicksand', sans-serif;
+
+}
+
+ul.products li .products-infor .products-original-price4 {
+    position: absolute;
+    text-decoration: line-through;
+    color: #9e9e9e;
+    top: 1194px;
+    left: 1070px;
+    font-size: 15px;
+}
+
+/* FINISH CSS HOT PRODUCTS */
+
+/* CSS SOLOGAN SHOP FLOWERS */
+
+#wrapper .container1 {
+    float: left;
+    width: calc(100%/3);
+    text-align: center;
+    margin-top: 40px;
+}
+
+#wrapper .container1 img {
+    width: 35%;
+}
+
+#wrapper .free-shipping,
+.giao-nhanh,
+.hoa-dep-nhu-hinh {
+    font-size: 19px;
+    text-align: center;
+    font-family: 'Quicksand', sans-serif;
+    margin: 10px 0;
+    font-weight: bold;
+}
+
+#wrapper .document-free-shipping {
+    font-size: 14px;
+    font-family: 'Quicksand', sans-serif;
+}
+
+#wrapper .document-giao-nhanh {
+    font-size: 14px;
+    font-family: 'Quicksand', sans-serif;
+
+}
+
+#wrapper .document-hoa-dep-nhu-hinh {
+    font-size: 14px;
+    font-family: 'Quicksand', sans-serif;
+}
+
+/* FINISH CSS SOLOGAN SHOP FLOWERS */
+
+/* CSS PRODUCT CONTENT  */
+
+#danh-sach-san-pham {
+    width: 90%;
+    margin: 0 auto;
+}
+
+#danh-sach-san-pham .heading a {
+    font-size: 18px;
+    color: rgb(235, 98, 144);
+    padding: 10px 20px;
+    text-transform: uppercase;
+    border: 1px solid #e0a0a0;
+    display: inline-block;
+    font-weight: 600;
+    border-radius: 20px;
+    text-decoration: none;
+    transition: 0.7s;
+    font-family: 'Quicksand', sans-serif;
+}
+
+#danh-sach-san-pham .heading:hover a {
+    color: #fff;
+    letter-spacing: 0.1em;
+    background-color: rgb(228, 62, 90);
+}
+
+#danh-sach-san-pham .gia-tien {
+    text-align: center;
+    font-size: 15px;
+    font-weight: bold;
+    color: rgb(97, 96, 96);
+    font-family: 'Quicksand', sans-serif;
+    margin-top: 7px;
+
+}
+
+/* NOTE: REUSED ID'S CSS ABOVE */
+
+/* FINISH CSS PRODUCT CONTENT */
+
+// CSS CART
+
+.cart-btn {
+    position: relative;
+    display: flex;
+    justify-content: flex-end;
+}
+
+#cart {
+    position: relative;
+    font-size: 2rem;
+    cursor: pointer;
+    margin: 1em 4em 0 0;
+}
+
+.cart-quantity {
+    color: white;
+    background-color: red;
+    padding: .2em .3em;
+    position: absolute;
+    margin: .8em 7.5em 0 0;
+    right: 0;
+    border: solid 2px red;
+    border-radius: 15px;
+    font-weight: bolder;
+}
+
+.items-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    margin-top: 1em
+}
+
+.card {
+    /*   width: 15rem; */
+    margin: 1em;
+    position: relative;
+    overflow: hidden;
+    text-align: center
+}
+
+// .card:hover .add-to-cart {
+//     transform: translateX(0);
+// }
+
+.product-image {
+    margin-bottom: 1em
+}
+
+.add-to-cart {
+    background-color: black;
+    color: white;
+    position: absolute;
+    right: 0;
+    top: 65%;
+    padding: .5em 1em;
+    transform: translateX(300px);
+    transition: .5s ease;
+    outline: none;
+    border: none;
+    cursor: pointer;
+    font-weight: bolder;
+    font-size: 1.2rem
+}
+
+.product-price {
+    padding-top: 1em;
+    font-weight: bold;
+    font-size: 1.5rem;
+}
+
+.cart-modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, .5);
+    z-index: 2;
+    transform: translateX(-200%);
+    transition: .5s ease-out;
+
+}
+
+.cart-modal {
+    height: 100vh;
+    width: 50%;
+    background-color: rgb(50, 50, 50);
+    float: right;
+    overflow: scroll;
+    overflow-x: hidden;
+}
+
+#close-btn {
+    font-size: 1.5rem;
+    float: right;
+    margin: .5em 2em 0 0;
+    color: white;
+    cursor: pointer;
+}
+
+.cart-is-empty {
+    color: white;
+    text-align: center;
+    font-size: 1.5rem;
+    margin-bottom: 1em;
+    display: none;
+
+}
+
+.total {
+    text-align: center;
+    margin: 2em 0 2em 0;
+    /*   display: none; */
+}
+
+.cart-total {
+    color: white;
+}
+
+.total-price {
+    color: white;
+    font-size: 2rem;
+    display: block;
+}
+
+.purchase-btn {
+    font-size: 1rem;
+    font-weight: bolder;
+    background-color: green;
+    color: white;
+    padding: 1em 2em;
+    border-radius: 10px;
+    outline: none;
+    border: none;
+    cursor: pointer;
+    margin: 2em 0 1em 0;
+}
+
+.product-rows {
+    margin-top: 3em;
+    width: 95%;
+    margin-left: auto;
+    margin-right: auto;
+
+}
+
+.product-row {
+    display: flex;
+    align-items: center;
+}
+
+.cart-image {
+    width: 10rem;
+    margin: 1em;
+}
+
+.cart-price {
+    color: white;
+    font-size: 1.5rem;
+    font-weight: bolder;
+}
+
+.product-quantity {
+    width: 4rem;
+    font-size: 2rem;
+    margin-left: 3rem;
+}
+
+.remove-btn {
+    padding: 1em 2em;
+    background-color: red;
+    color: white;
+    outline: none;
+    border: none;
+    cursor: pointer;
+    margin-left: 3rem;
+    font-weight: bolder;
+    font-size: 1rem;
+}
+
+.remove-btn:active {
+    transform: translateY(5px);
+}
+
+@media (max-width: 1000px) {
+    .cart-modal {
+        width: 100vw;
+    }
+
+    .product-row {
+        flex-direction: column;
+        text-align: center;
+        margin-bottom: 2em;
+    }
+
+    .remove-btn {
+        margin: 0
+    }
+
+    .product-quantity {
+        margin: .5em 0 .5em 0
+    }
+}
+
+// FINISH CSS CART

@@ -1,0 +1,52 @@
+<div style="position: fixed;top: 0 ; left: 0; width: 100%">
+  <nav class="py-2 bg-body-tertiary border-bottom">
+    <div class="container d-flex flex-wrap">
+      <ul class="nav me-auto">
+        <li class="nav-item">
+          <a class="nav-link link-body-emphasis px-2 active" aria-current="page" routerLink="home">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link link-body-emphasis px-2" routerLink="products">Products</a>
+          <!-- <div class="dropdown">
+          <a href="#" class="nav-link link-body-emphasis px-2 dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+            Product
+          </a>
+          <ul class="dropdown-menu text-small shadow">
+            <li *ngFor="let ocassion of ocassions"><a class="dropdown-item" href="#">{{ocassion?.name}}</a></li>
+          </ul>
+        </div> -->
+        </li>
+        <li class="nav-item">
+          <a class="nav-link link-body-emphasis px-2" routerLink="about">About</a>
+        </li>
+      </ul>
+      <ul class="nav">
+        <li class="nav-item">
+          <a href="#" class="nav-link link-body-emphasis px-2">Login</a>
+        </li>
+        <li class="nav-item">
+          <a href="#" class="nav-link link-body-emphasis px-2">Sign up</a>
+        </li>
+        <app-cart></app-cart>
+      </ul>
+    </div>
+  </nav>
+  <header class="py-3 mb-4 border-bottom bg-white">
+    <div class="container d-flex flex-wrap justify-content-center">
+      <a href="/" class="d-flex align-items-center mb-3 mb-lg-0 me-lg-auto link-body-emphasis text-decoration-none">
+        <svg class="bi me-2" width="40" height="32">
+          <use xlink:href="#bootstrap" />
+        </svg>
+        <span class="fs-4">Double header</span>
+      </a>
+      <!-- <form class="col-12 col-lg-auto mb-3 mb-lg-0" role="search">
+      <input
+        type="search"
+        class="form-control"
+        placeholder="Search..."
+        aria-label="Search"
+      />
+    </form> -->
+    </div>
+  </header>
+</div>

@@ -1,0 +1,118 @@
+{
+  "occasions": [
+    {
+      "id": 1,
+      "name": "Birthday Flowers"
+    },
+    {
+      "id": 2,
+      "name": "Grand Opening Flowers"
+    },
+    {
+      "id": 3,
+      "name": "Congratulation Flowers"
+    },
+    {
+      "id": 4,
+      "name": "Love Flowers"
+    },
+    {
+      "id": 5,
+      "name": "Thanks Flowers"
+    },
+    {
+      "id": 6,
+      "name": "Graduation"
+    }
+  ],
+  "flowers": [
+    {
+      "id": 1,
+      "name": "Rose"
+    },
+    {
+      "id": 2,
+      "name": "Lotus"
+    },
+    {
+      "id": 3,
+      "name": "Sunflower"
+    },
+    {
+      "id": 4,
+      "name": "Hydrangeas"
+    }
+  ],
+  "products": [
+    {
+      "id": 1,
+      "name": "Hoa yêu thương",
+      "detail": "Đây là hoa yêu thương",
+      "price": 160,
+      "note": "Hoa này tặng cho những người bạn yêu thương",
+      "specialOffer": [
+        "Free card",
+        "Discount VND20,000 - 50,000 For Online Purchases"
+      ],
+      "occasions": [
+        1,
+        2,
+        3
+      ],
+      "flowers": [
+        1,
+        2
+      ]
+    },
+    {
+      "id": 2,
+      "name": "Hoa yêu thương 2",
+      "price": 170
+    },
+    {
+      "id": 3,
+      "name": "Hoa yêu thương 3",
+      "price": 180
+    },
+    {
+      "id": 4,
+      "name": "Hoa yêu thương 4",
+      "price": 190
+    },
+    {
+      "id": 5,
+      "name": "Hoa yêu thương 5",
+      "price": 200
+    },
+    {
+      "id": 6,
+      "name": "Hoa yêu thương 6",
+      "price": 257
+    },
+    {
+      "id": 7,
+      "name": "Yên Kiều 1",
+      "price": 258
+    },
+    {
+      "id": 8,
+      "name": "Yên Kiều 2",
+      "price": 259
+    },
+    {
+      "id": 9,
+      "name": "Yên Kiều 3",
+      "price": 260
+    },
+    {
+      "id": 10,
+      "name": "Yên Kiều 4",
+      "price": 261
+    },
+    {
+      "id": 11,
+      "name": "Yên Kiều 5",
+      "price": 262
+    }
+  ]
+}
