@@ -23,6 +23,10 @@
     {
       "id": 6,
       "name": "Graduation"
+    },
+    {
+      "id": 7,
+      "name": "Condolence flowers"
     }
   ],
   "flowers": [
@@ -41,76 +45,274 @@
     {
       "id": 4,
       "name": "Hydrangeas"
+    },
+    {
+      "id": 5,
+      "name": "Pink OHara"
+    },
+    {
+      "id": 6,
+      "name": "Pink Calimero"
+    },
+    {
+      "id": 7,
+      "name": "Pink carnations border"
+    },
+    {
+      "id": 8,
+      "name": "Purple Star Flower"
+    },
+    {
+      "id": 9,
+      "name": "Other side leaves"
+    },
+    {
+      "id": 10,
+      "name": "Baby Flower"
+    },
+    {
+      "id": 11,
+      "name": "Red Rose"
+    },
+    {
+      "id": 12,
+      "name": "Pink sand wall"
+    },
+    {
+      "id": 13,
+      "name": "White rossi"
+    },
+    {
+      "id": 14,
+      "name": "Free Spirit Rose"
+    },
+    {
+      "id": 15,
+      "name": "Chicken egg pink"
+    },
+    {
+      "id": 16,
+      "name": "Chrysanthemum yellow brown stamens"
+    },
+    {
+      "id": 17,
+      "name": "Pink orange party"
     }
   ],
   "products": [
     {
       "id": 1,
-      "name": "Hoa yêu thương",
-      "detail": "Đây là hoa yêu thương",
-      "price": 160,
-      "note": "Hoa này tặng cho những người bạn yêu thương",
+      "name": "First Love",
+      "image": "/assets/1_FirstLove.jpg",
+      "doc": "/assets/1_FirstLove.docx",
+      "detail": "Price include VAT - This product does not support free shipping",
+      "price": 11.1,
+      "note": "This is a specially designed flower arrangement and currently provided in Ho Chi Minh city and Ha Noi only.",
       "specialOffer": [
         "Free card",
-        "Discount VND20,000 - 50,000 For Online Purchases"
+        "Discount 1$ - 5$ For Online Purchases",
+        "Discount 3% For The 2nd Online Order, 5% For The 6th Online Order And 10% For The 12th Online Order (Applied In Ho Chi Minh City And Hanoi)",
+        "Free Delivery In Canter Areas",
+        "Fast Delievery In 2 Hours",
+        "Guarantee 100% Customer Satisfaction Or We Will Refund",
+        "Guarantee Flowers Stay Fresh In 3 Days"
       ],
       "occasions": [
-        1,
-        2,
-        3
+        1
       ],
       "flowers": [
-        1,
-        2
+        {
+          "id": 5,
+          "amount": 1
+        },
+        {
+          "id": 6,
+          "amount": 3
+        },
+        {
+          "id": 7,
+          "amount": 3
+        },
+        {
+          "id": 8,
+          "amount": 1
+        }
       ]
     },
     {
       "id": 2,
-      "name": "Hoa yêu thương 2",
-      "price": 170
+      "name": "Romance 3",
+      "image": "/assets/2_Romance3.jpg",
+      "doc": "/assets/2_Romance3.docx",
+      "detail": "Price include VAT - This product does not support free shipping",
+      "price": 35.56,
+      "note": "This is a specially designed flower arrangement and currently provided in Ho Chi Minh city and Ha Noi only.",
+      "specialOffer": [
+        "Free card",
+        "Discount 1$ - 5$ For Online Purchases",
+        "Discount 3% For The 2nd Online Order, 5% For The 6th Online Order And 10% For The 12th Online Order (Applied In Ho Chi Minh City And Hanoi)",
+        "Free Delivery In Canter Areas",
+        "Fast Delievery In 2 Hours",
+        "Guarantee 100% Customer Satisfaction Or We Will Refund",
+        "Guarantee Flowers Stay Fresh In 3 Days"
+      ],
+      "occasions": [
+        1
+      ],
+      "flowers": [
+        {
+          "id": 8,
+          "amount": 1
+        },
+        {
+          "id": 9,
+          "amount": 7
+        },
+        {
+          "id": 5,
+          "amount": 18
+        }
+      ]
     },
     {
       "id": 3,
-      "name": "Hoa yêu thương 3",
-      "price": 180
+      "name": "Story of love",
+      "image": "/assets/3_Storyoflove.jpg",
+      "doc": "/assets/3_Storyoflove.docx",
+      "detail": "Price include VAT - This product does not support free shipping",
+      "price": 26.67,
+      "note": "This is a specially designed flower arrangement and currently provided in Ho Chi Minh city and Ha Noi only.",
+      "specialOffer": [
+        "Free card",
+        "Discount 1$ - 5$ For Online Purchases",
+        "Discount 3% For The 2nd Online Order, 5% For The 6th Online Order And 10% For The 12th Online Order (Applied In Ho Chi Minh City And Hanoi)",
+        "Free Delivery In Canter Areas",
+        "Fast Delievery In 2 Hours",
+        "Guarantee 100% Customer Satisfaction Or We Will Refund",
+        "Guarantee Flowers Stay Fresh In 3 Days"
+      ],
+      "occasions": [
+        1
+      ],
+      "flowers": [
+        {
+          "id": 10,
+          "amount": 1
+        },
+        {
+          "id": 11,
+          "amount": 20
+        }
+      ]
     },
     {
       "id": 4,
-      "name": "Hoa yêu thương 4",
-      "price": 190
+      "name": "Story of the sun",
+      "image": "/assets/4_Storyofthesun.jpg",
+      "doc": "/assets/4_Storyofthesun.docx",
+      "detail": "Price include VAT - This product does not support free shipping",
+      "price": 33.33,
+      "note": "This is a specially designed flower arrangement and currently provided in Ho Chi Minh city and Ha Noi only.",
+      "specialOffer": [
+        "Free card",
+        "Discount 1$ - 5$ For Online Purchases",
+        "Discount 3% For The 2nd Online Order, 5% For The 6th Online Order And 10% For The 12th Online Order (Applied In Ho Chi Minh City And Hanoi)",
+        "Free Delivery In Canter Areas",
+        "Fast Delievery In 2 Hours",
+        "Guarantee 100% Customer Satisfaction Or We Will Refund",
+        "Guarantee Flowers Stay Fresh In 3 Days"
+      ],
+      "occasions": [
+        1
+      ],
+      "flowers": [
+        {
+          "id": 12,
+          "amount": 1
+        },
+        {
+          "id": 13,
+          "amount": 4
+        },
+        {
+          "id": 14,
+          "amount": 6
+        },
+        {
+          "id": 10,
+          "amount": 1
+        },
+        {
+          "id": 15,
+          "amount": 10
+        }
+      ]
     },
     {
       "id": 5,
-      "name": "Hoa yêu thương 5",
-      "price": 200
+      "name": "Party",
+      "image": "/assets/5_Party.jpg",
+      "doc": "/assets/5_Party.docx",
+      "detail": "Price include VAT - This product does not support free shipping",
+      "price": 42.22,
+      "note": "This is a specially designed flower arrangement and currently provided in Ho Chi Minh city and Ha Noi only.",
+      "specialOffer": [
+        "Free card",
+        "Discount 1$ - 5$ For Online Purchases",
+        "Discount 3% For The 2nd Online Order, 5% For The 6th Online Order And 10% For The 12th Online Order (Applied In Ho Chi Minh City And Hanoi)",
+        "Free Delivery In Canter Areas",
+        "Fast Delievery In 2 Hours",
+        "Guarantee 100% Customer Satisfaction Or We Will Refund",
+        "Guarantee Flowers Stay Fresh In 3 Days"
+      ],
+      "occasions": [
+        2
+      ],
+      "flowers": [
+        {
+          "id": 16,
+          "amount": 10
+        },
+        {
+          "id": 10,
+          "amount": 1
+        },
+        {
+          "id": 17,
+          "amount": 15
+        },
+        {
+          "id": 10,
+          "amount": 1
+        },
+        {
+          "id": 15,
+          "amount": 5
+        }
+      ]
     },
     {
       "id": 6,
-      "name": "Hoa yêu thương 6",
-      "price": 257
-    },
-    {
-      "id": 7,
       "name": "Yên Kiều 1",
       "price": 258
     },
     {
-      "id": 8,
+      "id": 7,
       "name": "Yên Kiều 2",
       "price": 259
     },
     {
-      "id": 9,
+      "id": 8,
       "name": "Yên Kiều 3",
       "price": 260
     },
     {
-      "id": 10,
+      "id": 9,
       "name": "Yên Kiều 4",
       "price": 261
     },
     {
-      "id": 11,
+      "id": 10,
       "name": "Yên Kiều 5",
       "price": 262
     }
