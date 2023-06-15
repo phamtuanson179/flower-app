@@ -16,7 +16,7 @@ const routes: Routes = [
     path: 'products',
     children: [
       { path: '', component: ProductsComponent },
-      { path: 'detail', component: ProductsDetailComponent }
+      { path: 'detail/:id', component: ProductsDetailComponent }
     ]
   },
   {

@@ -1,232 +1,174 @@
-<!-- Nội dung chi tiết sản phẩm  -->
-<div class="main-content">
-    <!-- Phần thanh chỉ đường dẫn - tạm thời đang comment lại  -->
-    <!-- <div class="crumbs">
-    <ul class="crumbs-ul">
-      <li>
-        <h4>
-          <a href="/" title="Trang chủ">
-            ::before
-            "Trang chủ"
-          </a>
-        </h4>
-      </li>
-      <li></li>
-      <li></li>
-    </ul> -->
-</div>
-<!-- Phần thông tin chi tiết sản phẩm -->
+<div class="flower-details">
+  <div class="flower-image">
+    <img src="001_tinh-dau-tho-ngay.jpg" alt="Hình ảnh hoa" />
+  </div>
+  <div class="flower-info">
+    <h2>{{ product?.name }}</h2>
+    <p>{{ product?.detail }}</p>
+    <!-- <ul>
+                <li>Đặc điểm 1</li>
+                <li>Đặc điểm 2</li>
+                <li>Đặc điểm 3</li>
+            </ul> -->
 
-<div *ngFor="let product of products, let i = index" class="flower-details">
-    <div *ngIf="i==2">
-        <div class="flower-image">
-            <a href="" class="products-thumb">
-                <img [src]="product.image" alt="">
-            </a>
-        </div>
-        <div class="flower-info">
-            <h2>{{product.name}}</h2>
-            <p>{{product.detail}}</p>
-            <ul>
-                <li>{{product.ocassions}}</li>
-            </ul>
-
-            <div class="special-offers">
-                <h4>Special Offer</h4>
+    <!-- <div class="special-offers">
+                <h4>Thông tin ưu đãi đặc biệt</h4>
                 <ul>
-                    {{product.specialOffer}}
+                    <li>Ưu đãi số 1</li>
+                    <li>Ưu đãi số 2</li>
+                    <li>Ưu đãi số 3</li>
                 </ul>
-                <!-- Thông tin ưu đãi đặc biệt -->
-            </div>
+            </div> -->
 
-            <p>Giá: $99.99</p>
-            <div class="add-to-cart">
-                <button><a href="/Khai_ePJ_1.1/Cart_Khai/Cart.html">Thêm vào giỏ</a></button>
-            </div>
-
-            <div class="buy-now">
-                <button>Mua ngay</button>
-            </div>
-            <div class="call-now">
-                <button>Gọi ngay: 1800 6789</button>
-            </div>
-            <a [href]="product.doc" download>
-                <button>Tải file Word</button>
-            </a>
-        </div>
+    <p>Giá: ${{ product?.price }}</p>
+    <div class="add-to-cart">
+      <button (click)="addToCart(product)">Add to cart</button>
+    </div>
+    <div class="form-check">
+      <input
+        class="form-check-input"
+        type="checkbox"
+        [checked]="product?.isCompared"
+        id="flexCheckChecked"
+        (input)="handleCompareProduct($event, product)"
+      />
+      <label class="form-check-label" for="flexCheckChecked"> So sánh </label>
     </div>
 
-
-
+    <!-- <div class="buy-now">
+                <button>Mua ngay</button>
+            </div> -->
+    <!-- <div class="call-now">
+                <button>Gọi ngay: 1800 6789</button>
+            </div> -->
+  </div>
 </div>
 
-<!-- Thêm phần các nhóm hoa -->
 <div class="flower-groups">
-    <h3>Các nhóm hoa</h3>
-    <ul>
-        <li><button class="tag-button" data-tag="tag1">#Nhóm hoa 1</button></li>
-        <li><button class="tag-button" data-tag="tag2">#Nhóm hoa 2</button></li>
-        <li><button class="tag-button" data-tag="tag3">#Nhóm hoa 3</button></li>
-    </ul>
+  <h3>Occasion</h3>
+  <ul>
+    <li *ngFor="let occasion of product?.rawOccasions">
+      <button class="tag-button" data-tag="tag1">#{{ occasion?.name }}</button>
+    </li>
+  </ul>
 </div>
 
-<div id="tag1" class="tag-posts">
-    <!-- Nội dung bài viết thuộc nhóm hoa 1 -->
-</div>
-
-<div id="tag2" class="tag-posts">
-    <!-- Nội dung bài viết thuộc nhóm hoa 2 -->
-</div>
-
-<div id="tag3" class="tag-posts">
-    <!-- Nội dung bài viết thuộc nhóm hoa 3 -->
-</div>
+<!-- <div id="tag1" class="tag-posts">
+</div> -->
 
 <!-- Nội dung phần Tại sao bạn nên dùng dịch vụ của chúng tôi -->
-<div class="container">
-    <div class="centered-content">
-        <h2>Tại sao bạn nên dùng dịch vụ của chúng tôi?</h2>
-        <div class="row">
-            <div class="col">
-                <div class="feature">
-                    <i class="fas fa-check"></i>
-                    <h3>Nội dung 1</h3>
-                    <p>Nội dung phụ 1</p>
-                </div>
-            </div>
-            <div class="col">
-                <div class="feature">
-                    <i class="fas fa-check"></i>
-                    <h3>Nội dung 2</h3>
-                    <p>Nội dung phụ 2</p>
-                </div>
-            </div>
-            <div class="col">
-                <div class="feature">
-                    <i class="fas fa-check"></i>
-                    <h3>Nội dung 3</h3>
-                    <p>Nội dung phụ 3</p>
-                </div>
-            </div>
+<!-- <div class="container">
+  <div class="centered-content">
+    <h2>Tại sao bạn nên dùng dịch vụ của chúng tôi?</h2>
+    <div class="row">
+      <div class="col">
+        <div class="feature">
+          <i class="fas fa-check"></i>
+          <h3>Nội dung 1</h3>
+          <p>Nội dung phụ 1</p>
         </div>
-        <div class="row">
-            <div class="col">
-                <div class="feature">
-                    <i class="fas fa-check"></i>
-                    <h3>Nội dung 4</h3>
-                    <p>Nội dung phụ 4</p>
-                </div>
-            </div>
-            <div class="col">
-                <div class="feature">
-                    <i class="fas fa-check"></i>
-                    <h3>Nội dung 5</h3>
-                    <p>Nội dung phụ 5</p>
-                </div>
-            </div>
-            <div class="col">
-                <div class="feature">
-                    <i class="fas fa-check"></i>
-                    <h3>Nội dung 6</h3>
-                    <p>Nội dung phụ 6</p>
-                </div>
-            </div>
+      </div>
+      <div class="col">
+        <div class="feature">
+          <i class="fas fa-check"></i>
+          <h3>Nội dung 2</h3>
+          <p>Nội dung phụ 2</p>
         </div>
+      </div>
+      <div class="col">
+        <div class="feature">
+          <i class="fas fa-check"></i>
+          <h3>Nội dung 3</h3>
+          <p>Nội dung phụ 3</p>
+        </div>
+      </div>
     </div>
-</div>
+    <div class="row">
+      <div class="col">
+        <div class="feature">
+          <i class="fas fa-check"></i>
+          <h3>Nội dung 4</h3>
+          <p>Nội dung phụ 4</p>
+        </div>
+      </div>
+      <div class="col">
+        <div class="feature">
+          <i class="fas fa-check"></i>
+          <h3>Nội dung 5</h3>
+          <p>Nội dung phụ 5</p>
+        </div>
+      </div>
+      <div class="col">
+        <div class="feature">
+          <i class="fas fa-check"></i>
+          <h3>Nội dung 6</h3>
+          <p>Nội dung phụ 6</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div> -->
 
-<!-- Nội dung phần những mẫu hoa cùng loại khác -->
 <div class="flowers">
-    <h2>Những mẫu hoa cùng loại khác</h2>
-    <div class="flower-grid">
-        <div class="flower">
-            <img src="flower1.jpg" alt="Hoa 1">
-            <h3>Tên loại hoa 1</h3>
-            <p>Giá tiền 1</p>
-        </div>
-        <div class="flower">
-            <img src="flower2.jpg" alt="Hoa 2">
-            <h3>Tên loại hoa 2</h3>
-            <p>Giá tiền 2</p>
-        </div>
-        <div class="flower">
-            <img src="flower3.jpg" alt="Hoa 3">
-            <h3>Tên loại hoa 3</h3>
-            <p>Giá tiền 3</p>
-        </div>
-        <div class="flower">
-            <img src="flower4.jpg" alt="Hoa 4">
-            <h3>Tên loại hoa 4</h3>
-            <p>Giá tiền 4</p>
-        </div>
-        <div class="flower">
-            <img src="flower5.jpg" alt="Hoa 5">
-            <h3>Tên loại hoa 5</h3>
-            <p>Giá tiền 5</p>
-        </div>
-        <div class="flower">
-            <img src="flower6.jpg" alt="Hoa 6">
-            <h3>Tên loại hoa 6</h3>
-            <p>Giá tiền 6</p>
-        </div>
-        <div class="flower">
-            <img src="flower3.jpg" alt="Hoa 3">
-            <h3>Tên loại hoa 7</h3>
-            <p>Giá tiền 7</p>
-        </div>
-        <div class="flower">
-            <img src="flower4.jpg" alt="Hoa 4">
-            <h3>Tên loại hoa 8</h3>
-            <p>Giá tiền 8</p>
-        </div>
-        <div class="flower">
-            <img src="flower5.jpg" alt="Hoa 5">
-            <h3>Tên loại hoa 9</h3>
-            <p>Giá tiền 9</p>
-        </div>
-        <div class="flower">
-            <img src="flower6.jpg" alt="Hoa 6">
-            <h3>Tên loại hoa 10</h3>
-            <p>Giá tiền 10</p>
-        </div>
-        <!-- Thêm các khối nội dung hoa khác tương tự -->
-
+  <h2>Những mẫu hoa cùng loại khác</h2>
+  <div class="row">
+    <div class="col-4">
+      <img src="flower1.jpg" alt="Hoa 1" />
+      <h3>{{ productService?.productList?.[0]?.name }}</h3>
+      <p>${{ productService?.productList?.[0]?.price }}</p>
     </div>
+  </div>
 
+  <div class="col-4">
+    <img src="flower1.jpg" alt="Hoa 1" />
+    <h3>{{ productService?.productList?.[1]?.name }}</h3>
+    <p>${{ productService?.productList?.[1]?.price }}</p>
+  </div>
+
+  <div class="col-4">
+    <img src="flower1.jpg" alt="Hoa 1" />
+    <h3>{{ productService?.productList?.[2]?.name }}</h3>
+    <p>${{ productService?.productList?.[2]?.price }}</p>
+  </div>
 </div>
-
-
-
 
 <!-- Phần nội dung khác của trang web -->
 
-<footer>
-    <div class="footer-container">
-        <div class="footer-column">
-            <h3>Thông tin</h3>
-            <ul>
-                <li><a href="#">Về chúng tôi</a></li>
-                <li><a href="#">Chính sách bảo mật</a></li>
-                <li><a href="#">Điều khoản sử dụng</a></li>
-                <li><a href="#">Liên hệ</a></li>
-            </ul>
-        </div>
-        <div class="footer-column">
-            <h3>Hỗ trợ</h3>
-            <ul>
-                <li><a href="#">Câu hỏi thường gặp</a></li>
-                <li><a href="#">Hướng dẫn đặt hàng</a></li>
-                <li><a href="#">Trạng thái đơn hàng</a></li>
-            </ul>
-        </div>
-        <div class="footer-column">
-            <h3>Kết nối với chúng tôi</h3>
-            <ul class="social-icons">
-                <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-                <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                <li><a href="#"><i class="fa fa-instagram"></i></a></li>
-                <li><a href="#"><i class="fa fa-pinterest"></i></a></li>
-            </ul>
-        </div>
+<!-- <footer>
+  <div class="footer-container">
+    <div class="footer-column">
+      <h3>Thông tin</h3>
+      <ul>
+        <li><a href="#">Về chúng tôi</a></li>
+        <li><a href="#">Chính sách bảo mật</a></li>
+        <li><a href="#">Điều khoản sử dụng</a></li>
+        <li><a href="#">Liên hệ</a></li>
+      </ul>
     </div>
-</footer>
+    <div class="footer-column">
+      <h3>Hỗ trợ</h3>
+      <ul>
+        <li><a href="#">Câu hỏi thường gặp</a></li>
+        <li><a href="#">Hướng dẫn đặt hàng</a></li>
+        <li><a href="#">Trạng thái đơn hàng</a></li>
+      </ul>
+    </div>
+    <div class="footer-column">
+      <h3>Kết nối với chúng tôi</h3>
+      <ul class="social-icons">
+        <li>
+          <a href="#"><i class="fa fa-facebook"></i></a>
+        </li>
+        <li>
+          <a href="#"><i class="fa fa-twitter"></i></a>
+        </li>
+        <li>
+          <a href="#"><i class="fa fa-instagram"></i></a>
+        </li>
+        <li>
+          <a href="#"><i class="fa fa-pinterest"></i></a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</footer> -->

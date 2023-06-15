@@ -173,9 +173,7 @@
         "Guarantee 100% Customer Satisfaction Or We Will Refund",
         "Guarantee Flowers Stay Fresh In 3 Days"
       ],
-      "occasions": [
-        1
-      ],
+      "occasions": [1],
       "flowers": [
         {
           "id": 5,
@@ -212,9 +210,7 @@
         "Guarantee 100% Customer Satisfaction Or We Will Refund",
         "Guarantee Flowers Stay Fresh In 3 Days"
       ],
-      "occasions": [
-        1
-      ],
+      "occasions": [1],
       "flowers": [
         {
           "id": 8,
@@ -247,9 +243,7 @@
         "Guarantee 100% Customer Satisfaction Or We Will Refund",
         "Guarantee Flowers Stay Fresh In 3 Days"
       ],
-      "occasions": [
-        1
-      ],
+      "occasions": [1],
       "flowers": [
         {
           "id": 10,
@@ -278,9 +272,7 @@
         "Guarantee 100% Customer Satisfaction Or We Will Refund",
         "Guarantee Flowers Stay Fresh In 3 Days"
       ],
-      "occasions": [
-        1
-      ],
+      "occasions": [1],
       "flowers": [
         {
           "id": 12,
@@ -321,9 +313,7 @@
         "Guarantee 100% Customer Satisfaction Or We Will Refund",
         "Guarantee Flowers Stay Fresh In 3 Days"
       ],
-      "occasions": [
-        2
-      ],
+      "occasions": [2],
       "flowers": [
         {
           "id": 16,
@@ -364,9 +354,7 @@
         "Guarantee 100% Customer Satisfaction Or We Will Refund",
         "Guarantee Flowers Stay Fresh In 3 Days"
       ],
-      "occasions": [
-        2
-      ],
+      "occasions": [2],
       "flowers": [
         {
           "id": 18,
@@ -407,9 +395,7 @@
         "Guarantee 100% Customer Satisfaction Or We Will Refund",
         "Guarantee Flowers Stay Fresh In 3 Days"
       ],
-      "occasions": [
-        2
-      ],
+      "occasions": [2],
       "flowers": [
         {
           "id": 22,
@@ -447,7 +433,7 @@
       "image": "/assets/8_Perfection03.jpg",
       "doc": "/assets/8_Perfection03.docx",
       "detail": "Price include VAT - This product does not support free shipping",
-      "price": 60.00,
+      "price": 60.0,
       "note": "This is a specially designed flower arrangement and currently provided in Ho Chi Minh city and Ha Noi only.",
       "specialOffer": [
         "Free card",
@@ -458,9 +444,7 @@
         "Guarantee 100% Customer Satisfaction Or We Will Refund",
         "Guarantee Flowers Stay Fresh In 3 Days"
       ],
-      "occasions": [
-        2
-      ],
+      "occasions": [2],
       "flowers": [
         {
           "id": 27,
@@ -501,9 +485,7 @@
         "Guarantee 100% Customer Satisfaction Or We Will Refund",
         "Guarantee Flowers Stay Fresh In 3 Days"
       ],
-      "occasions": [
-        3
-      ],
+      "occasions": [3],
       "flowers": [
         {
           "id": 23,
@@ -544,9 +526,7 @@
         "Guarantee 100% Customer Satisfaction Or We Will Refund",
         "Guarantee Flowers Stay Fresh In 3 Days"
       ],
-      "occasions": [
-        3
-      ],
+      "occasions": [3],
       "flowers": [
         {
           "id": 27,
@@ -587,9 +567,7 @@
         "Guarantee 100% Customer Satisfaction Or We Will Refund",
         "Guarantee Flowers Stay Fresh In 3 Days"
       ],
-      "occasions": [
-        3
-      ],
+      "occasions": [3],
       "flowers": [
         {
           "id": 7,
@@ -630,9 +608,7 @@
         "Guarantee 100% Customer Satisfaction Or We Will Refund",
         "Guarantee Flowers Stay Fresh In 3 Days"
       ],
-      "occasions": [
-        3
-      ],
+      "occasions": [3],
       "flowers": [
         {
           "id": 27,
@@ -673,9 +649,7 @@
         "Guarantee 100% Customer Satisfaction Or We Will Refund",
         "Guarantee Flowers Stay Fresh In 3 Days"
       ],
-      "occasions": [
-        4
-      ],
+      "occasions": [4],
       "flowers": [
         {
           "id": 3,
@@ -705,7 +679,7 @@
       "image": "/assets/14_Luxuryvase21.jpg",
       "doc": "/assets/14_Luxuryvase21.docx",
       "detail": "Price include VAT - This product does not support free shipping",
-      "price": 80.00,
+      "price": 80.0,
       "note": "This is a specially designed flower arrangement and currently provided in Ho Chi Minh city and Ha Noi only.",
       "specialOffer": [
         "Free card",
@@ -716,9 +690,7 @@
         "Guarantee 100% Customer Satisfaction Or We Will Refund",
         "Guarantee Flowers Stay Fresh In 3 Days"
       ],
-      "occasions": [
-        4
-      ],
+      "occasions": [4],
       "flowers": [
         {
           "id": 17,
@@ -759,9 +731,7 @@
         "Guarantee 100% Customer Satisfaction Or We Will Refund",
         "Guarantee Flowers Stay Fresh In 3 Days"
       ],
-      "occasions": [
-        4
-      ],
+      "occasions": [4],
       "flowers": [
         {
           "id": 27,
@@ -802,9 +772,7 @@
         "Guarantee 100% Customer Satisfaction Or We Will Refund",
         "Guarantee Flowers Stay Fresh In 3 Days"
       ],
-      "occasions": [
-        4
-      ],
+      "occasions": [4],
       "flowers": [
         {
           "id": 7,
@@ -845,9 +813,7 @@
         "Guarantee 100% Customer Satisfaction Or We Will Refund",
         "Guarantee Flowers Stay Fresh In 3 Days"
       ],
-      "occasions": [
-        5
-      ],
+      "occasions": [5],
       "flowers": [
         {
           "id": 27,
@@ -888,9 +854,7 @@
         "Guarantee 100% Customer Satisfaction Or We Will Refund",
         "Guarantee Flowers Stay Fresh In 3 Days"
       ],
-      "occasions": [
-        5
-      ],
+      "occasions": [5],
       "flowers": [
         {
           "id": 8,
@@ -931,9 +895,7 @@
         "Guarantee 100% Customer Satisfaction Or We Will Refund",
         "Guarantee Flowers Stay Fresh In 3 Days"
       ],
-      "occasions": [
-        5
-      ],
+      "occasions": [5],
       "flowers": [
         {
           "id": 7,
@@ -974,9 +936,7 @@
         "Guarantee 100% Customer Satisfaction Or We Will Refund",
         "Guarantee Flowers Stay Fresh In 3 Days"
       ],
-      "occasions": [
-        5
-      ],
+      "occasions": [5],
       "flowers": [
         {
           "id": 7,
@@ -1017,9 +977,7 @@
         "Guarantee 100% Customer Satisfaction Or We Will Refund",
         "Guarantee Flowers Stay Fresh In 3 Days"
       ],
-      "occasions": [
-        6
-      ],
+      "occasions": [6],
       "flowers": [
         {
           "id": 7,
@@ -1060,9 +1018,7 @@
         "Guarantee 100% Customer Satisfaction Or We Will Refund",
         "Guarantee Flowers Stay Fresh In 3 Days"
       ],
-      "occasions": [
-        6
-      ],
+      "occasions": [6],
       "flowers": [
         {
           "id": 7,
@@ -1103,9 +1059,7 @@
         "Guarantee 100% Customer Satisfaction Or We Will Refund",
         "Guarantee Flowers Stay Fresh In 3 Days"
       ],
-      "occasions": [
-        6
-      ],
+      "occasions": [6],
       "flowers": [
         {
           "id": 7,
@@ -1146,9 +1100,7 @@
         "Guarantee 100% Customer Satisfaction Or We Will Refund",
         "Guarantee Flowers Stay Fresh In 3 Days"
       ],
-      "occasions": [
-        6
-      ],
+      "occasions": [6],
       "flowers": [
         {
           "id": 7,

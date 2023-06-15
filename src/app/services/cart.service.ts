@@ -4,19 +4,17 @@ import { IProduct } from "../models/product"
 @Injectable({ providedIn: 'root' })
 
 export class CartService {
-    public listProducts: IProduct[] = []
+    public productList: IProduct[] = []
 
     constructor() {
     }
 
     getCart() {
-        return this.listProducts
+        return this.productList
     }
 
     addProduct(product: IProduct) {
-        console.log(product, this.listProducts);
-
-        if (this.listProducts.find((item: IProduct) =>
+        if (this.productList.find((item: IProduct) =>
             item.id == product.id
         )) {
             return alert("San pham da ton tai")
@@ -24,24 +22,18 @@ export class CartService {
 
         product.amount = 1
 
-        return this.listProducts.push(product)
+        return this.productList.push(product)
     }
 
     deleteProduct(productId: string) {
-        const newCart = this.listProducts.filter((product: IProduct) =>
+        const newList = this.productList.filter((product: IProduct) =>
             product.id != productId
         )
-
-        this.listProducts = newCart
+        this.productList = newList
     }
 
     updateAmount(productId: string, amount: number) {
-        //amount = 0 xu li trc do
-        // if (amount == 0) {
-        //   this.deleteProduct(productId)
-        // }
-
-        let product = this.listProducts.find((item: IProduct) => {
+        let product = this.productList.find((item: IProduct) => {
             item.id == productId
         })
 
@@ -50,7 +42,7 @@ export class CartService {
 
     total() {
         let res = 0
-        this.listProducts.forEach((item: IProduct) => {
+        this.productList.forEach((item: IProduct) => {
             res += item.amount * item.price
             console.log(res, item.amount, item.price);
 
@@ -59,11 +51,5 @@ export class CartService {
         return res
     }
 
-
-
-
-
 }
 
-
-//listProducts: [{id:'1', name:'hoa mua xuan', price:100, amount: 1 }]

@@ -1,31 +1,61 @@
-<button class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample"
-    aria-controls="offcanvasExample">
-    Cart : {{cartService.listProducts.length}}
+<button
+  type="button"
+  class="btn btn-primary position-relative"
+  data-bs-toggle="offcanvas"
+  data-bs-target="#offcanvasExample"
+  aria-controls="offcanvasExample"
+>
+  <i class="bi bi-cart"></i>
+  <span
+    class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger"
+    *ngIf="cartService.productList.length"
+  >
+    {{ cartService.productList.length }}
+  </span>
 </button>
 
-<div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
-    <div class="offcanvas-header">
-        <h5 class="offcanvas-title" id="offcanvasExampleLabel">My cart</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-    </div>
-    <div class="offcanvas-body">
-        <div>
-            <div>
-                <!-- ngfor  -->
-                <div class="product-row" *ngFor="let product of cartService.listProducts">
-                    <img class="cart-image" src="" alt="">
-                    <span class="cart-price">{{product.price}}$</span>
-                    {{product.amount|json}}
-                    <input class="product-quantity" type="number" [(ngModel)]="product.amount">
-                    <button class="remove-btn" (click)="removeProduct(product.id)">Xoa</button>
-                </div>
-            </div>
-
-            <div class="total">
-                <h1 class="cart-total">TOTAL</h1>
-                <span class="total-price">{{totalPrice()}}$</span>
-                <button class="purchase-btn">PURCHASE</button>
-            </div>
+<div
+  class="offcanvas offcanvas-end"
+  tabindex="-1"
+  id="offcanvasExample"
+  aria-labelledby="offcanvasExampleLabel"
+>
+  <div class="offcanvas-header">
+    <h5 class="offcanvas-title" id="offcanvasExampleLabel">My cart</h5>
+    <button
+      type="button"
+      class="btn-close"
+      data-bs-dismiss="offcanvas"
+      aria-label="Close"
+    ></button>
+  </div>
+  <div class="offcanvas-body">
+    <div>
+      <div>
+        <!-- ngfor  -->
+        <div
+          class="product-row"
+          *ngFor="let product of cartService.productList"
+        >
+          <img class="cart-image" src="" alt="" />
+          <span class="cart-price">{{ product.price }}$</span>
+          {{ product.amount | json }}
+          <input
+            class="product-quantity"
+            type="number"
+            [(ngModel)]="product.amount"
+          />
+          <button class="remove-btn" (click)="removeProduct(product.id)">
+            Xoa
+          </button>
         </div>
+      </div>
+
+      <div class="total">
+        <h1 class="cart-total">TOTAL</h1>
+        <span class="total-price">{{ totalPrice() }}$</span>
+        <button class="purchase-btn">PURCHASE</button>
+      </div>
     </div>
+  </div>
 </div>
