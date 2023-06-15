@@ -1,132 +1,175 @@
-<p>home works!</p>
-
 <div id="main">
-    <!--  SLIDER -->
-    <div id="slider">
-        <div class="title-slider">
-            <p class="title-document">ONLINE ORRDER - FREE SHIP TP HCM & HA NOI CITY - CALL 1900 999 999 OR 0865 999 999
-            </p>
-        </div>
-        <div class="slider-imgs">
-            <img src="/assets/anh1.jpg" alt="img1" class="imgslider1">
-            <img src="/assets/anh2.jpg" alt="img2" class="imgslider2">
-            <img src="/assets/anh3.jpg" alt="img3" class="imgslider3">
-            <img src="/assets/anh4.jpg" alt="img4" class="imgslider4">
-            <img src="/assets/anh5.jpg" alt="img5" class="imgslider5">
-        </div>
+  <!--  SLIDER -->
+  <div id="slider">
+    <div class="title-slider">
+      <p class="title-document">
+        ONLINE ORRDER - FREE SHIP TP HCM & HA NOI CITY - CALL 1900 999 999 OR
+        0865 999 999
+      </p>
+    </div>
+    <div class="slider-imgs">
+      <img src="/assets/anh1.jpg" alt="img1" class="imgslider1" />
+      <img src="/assets/anh2.jpg" alt="img2" class="imgslider2" />
+      <img src="/assets/anh3.jpg" alt="img3" class="imgslider3" />
+      <img src="/assets/anh4.jpg" alt="img4" class="imgslider4" />
+      <img src="/assets/anh5.jpg" alt="img5" class="imgslider5" />
+    </div>
+  </div>
 
-        <!-- FINISH SLIDER -->
-        <!-- {{ocassions|json}} -->
+  <div class="row mt-5">
+    <div
+      class="col-2 text-center"
+      style="cursor: pointer"
+      *ngFor="let occasion of occasionService.occasionList; let i = index"
+      (click)="onClickOccasion(occasion)"
+    >
+      <div *ngIf="i < 6">
+        <div
+          style="max-width: 10rem; aspect-ratio: 1"
+          class="rounded-circle overflow-hidden m-auto"
+        >
+          <img src="/assets/hoa-tinh-yeu.webp" alt="" class="w-100 h-100" />
+        </div>
+        <div class="fs-5 text-center">
+          {{ occasion.name }}
+        </div>
+      </div>
+    </div>
+  </div>
 
-        <!--  LIST PRODUCTS -->
-        <div class="danh-sach-hoa-slider">
-            <div class="anh-hoa hoa-tinh-yeu" *ngFor="let ocassion of ocassions, let i = index">
-                <div *ngIf="i<6">
-                    <img src="/assets/hoa-tinh-yeu.webp" alt="" class="list-anh-hoa">
-                    <!-- {{ocassion |json}} -->
-                    <p class="title-anh-hoa"><a href="">{{ocassion.name}}</a></p>
+  <div>
+    <div class="mb-5">
+      <div class="heading">
+        <h3>HOT PRODUCTS</h3>
+      </div>
+      <div class="row g-4">
+        <div
+          *ngFor="let product of hotProductList; let i = index"
+          class="col-3"
+        >
+          <div *ngIf="i < 8" class="h-100">
+            <div class="card h-100">
+              <img
+                src="/assets/An Dau-278x278.jpg"
+                class="card-img-top"
+                alt="..."
+              />
+              <div class="card-body d-flex flex-column">
+                <h5 class="card-title">{{ product?.name }}</h5>
+                <p class="card-text" style="flex: 1">{{ product?.detail }}</p>
+                <div class="d-flex justify-content-between">
+                  <div class="fs-5">${{ product?.price }}</div>
+                  <div class="text-end">
+                    <button
+                      class="btn btn-primary me-2"
+                      (click)="addToCart(product)"
+                    >
+                      <i class="bi bi-cart"></i>
+                    </button>
+                    <button
+                      class="btn btn-warning me-2"
+                      (click)="
+                        handleCompareProduct(!product?.isCompared, product)
+                      "
+                    >
+                      <i class="bi bi-clipboard2"></i>
+                    </button>
+
+                    <button
+                      class="btn btn-info"
+                      (click)="goToProductDetail(product)"
+                    >
+                      <i class="bi bi-arrow-right-short"></i>
+                    </button>
+                  </div>
                 </div>
-
-
+              </div>
             </div>
-
+          </div>
         </div>
+      </div>
     </div>
-    <!-- FINISH LIST PRODUCT -->
 
-    <!--  HOT PRODUCT -->
-    <div id="wrapper">
-        <div class="heading">
-            <h3>HOT PRODUCTS</h3>
-        </div>
-        <ul class="products">
-            <li *ngFor="let product of products, let i = index">
-                <div *ngIf="i<8">
-                    <div class="products-item">
-                        <div class="products-top">
-                            <div class="products-thumb">
-                                <img src="/assets/An Dau-278x278.jpg" alt="">
-                            </div>
-                            <div class="product-info">
-                                {{product.name}}<br>
-                                {{product.price}}$
-                            </div>
-                            <button class="buy-now" (click)="addToCart(product)">Add to Cart</button>
-                        </div>
-                    </div>
+    <div class="mt-5">
+      <div class="heading">
+        <h3>NEWS</h3>
+      </div>
+      <div class="row g-4">
+        <div
+          *ngFor="let product of newProductList; let i = index"
+          class="col-3"
+        >
+          <div *ngIf="i < 8" class="h-100">
+            <div class="card h-100">
+              <img
+                src="/assets/An Dau-278x278.jpg"
+                class="card-img-top"
+                alt="..."
+              />
+              <div class="card-body d-flex flex-column">
+                <h5 class="card-title">{{ product?.name }}</h5>
+                <p class="card-text" style="flex: 1">{{ product?.detail }}</p>
+                <div class="d-flex justify-content-between">
+                  <div class="fs-5">${{ product?.price }}</div>
+                  <div class="text-end">
+                    <button
+                      class="btn btn-primary me-2"
+                      (click)="addToCart(product)"
+                    >
+                      <i class="bi bi-cart"></i>
+                    </button>
+                    <button
+                      class="btn btn-warning me-2"
+                      (click)="
+                        handleCompareProduct(!product?.isCompared, product)
+                      "
+                    >
+                      <i class="bi bi-clipboard2"></i>
+                    </button>
+                    <button
+                      class="btn btn-info"
+                      (click)="goToProductDetail(product)"
+                    >
+                      <i class="bi bi-arrow-right-short"></i>
+                    </button>
+                  </div>
                 </div>
-
-            </li>
-        </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
-
-
-    <!-- FINISH HOT PRODUCT -->
 
     <!-- SOLOGAN SHOP FLOWER -->
-    <div class="sologan-ban-hoa">
-        <div class="container1 ">
-            <img src="/assets/Slogan1.png" alt="">
-            <div class="free-shipping">FREE SHIPPING</div>
-            <p class="document-free-shipping">
-                Flower Corner giao miễn phí các Quận 1,3,4,5,6,7,8,10,11,Tân Bình,Tân Phú,Phú Nhuận,Bình Thạnh
-                đối với tất
-                cả bó hoa, lẵng hoa, và kệ hoa trên 1 triệu.
-            </p>
-        </div>
-        <div class="container1 ">
-            <img src="/assets/Slogan2.png" alt="">
-            <div class="giao-nhanh">GIAO NHANH TRONG 90 PHÚT</div>
-            <p class="document-giao-nhanh">
-                Flower corner có thể giao nhanh trong khu vực nội thành TP.HCM với bó hoa hoặc lãng hoa đơn giản
-            </p>
-        </div>
-        <div class="container1 ">
-            <img src="/assets/Slogan3.png" alt="">
-            <div class="hoa-dep-nhu-hinh">HOA ĐẸP NHƯ HÌNH</div>
-            <p class="document-hoa-dep-nhu-hinh">
-                Cam kết hoa đẹp như hình và giống đến 90% so với hình ảnh chụp trên website
-            </p>
-        </div>
+    <div class="row mt-5">
+      <div class="col-4 text-center">
+        <img src="/assets/Slogan1.png" alt="" />
+        <div class="giao-nhanh">FREE SHIPPING</div>
+        <p class="document-free-shipping">
+          Flower Corner giao miễn phí các Quận 1,3,4,5,6,7,8,10,11,Tân Bình,Tân
+          Phú,Phú Nhuận,Bình Thạnh đối với tất cả bó hoa, lẵng hoa, và kệ hoa
+          trên 1 triệu.
+        </p>
+      </div>
+
+      <div class="col-4 text-center">
+        <img src="/assets/Slogan2.png" alt="" />
+        <div class="giao-nhanh">GIAO NHANH TRONG 90 PHÚT</div>
+        <p class="document-giao-nhanh">
+          Flower corner có thể giao nhanh trong khu vực nội thành TP.HCM với bó
+          hoa hoặc lãng hoa đơn giản
+        </p>
+      </div>
+
+      <div class="col-4 text-center">
+        <img src="/assets/Slogan3.png" alt="" />
+        <div class="hoa-dep-nhu-hinh">HOA ĐẸP NHƯ HÌNH</div>
+        <p class="document-hoa-dep-nhu-hinh">
+          Cam kết hoa đẹp như hình và giống đến 90% so với hình ảnh chụp trên
+          website
+        </p>
+      </div>
     </div>
-
-    <!--FINISH SOLOGAN SHOP FLOWERS-->
-
-
-    <!-- PRODUCT CONTENT  -->
-    <div id="danh-sach-san-pham">
-
-        <!-- BEST SELLER -->
-        <div class="heading">
-            <a href="">BEST SELLER</a>
-        </div>
-
-        <ul class="products">
-            <li *ngFor="let product of products, let i = index">
-                <!-- <div *ngIf="product.id >= 7 && product.id <= 10"> -->
-                <div *ngIf="i<4">
-                    <div class="products-item">
-                        <div class="products-top">
-                            <a href="" class="products-thumb">
-                                <img src="/assets/yeu-kieu.jpg" alt="">
-                            </a>
-                            <!-- <a href="" class="buy-now">Add to Cart</a> -->
-                        </div>
-                    </div>
-                    <div class="products-infor d-flex justify-content-between">
-                        <div> {{product.name}}<br>
-                            {{product.price}}$</div>
-                        <button class="buy-now" (click)="addToCart(product)">Add to Cart</button>
-                    </div>
-
-                </div>
-            </li>
-        </ul>
-        <!-- FINISH BEST SELLER -->
-
-
-    </div>
-
-
-
+  </div>
 </div>

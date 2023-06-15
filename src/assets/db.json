@@ -54,14 +54,25 @@
         "Free card",
         "Discount VND20,000 - 50,000 For Online Purchases"
       ],
-      "occasions": [
-        1,
-        2,
-        3
-      ],
+      "occasions": [1, 2, 3],
       "flowers": [
-        1,
-        2
+        "1,5",
+        "2,5"
+      ]
+    },
+    {
+      "id": 20,
+      "name": "Hoa yêu thương",
+      "detail": "Đây là hoa yêu thương",
+      "price": 160,
+      "note": "Hoa này tặng cho những người bạn yêu thương",
+      "specialOffer": [
+        "Free card",
+        "Discount VND20,000 - 50,000 For Online Purchases"
+      ],
+      "occasions": [1, 2, 3],
+      "flowers": [
+        "2,5"
       ]
     },
     {

@@ -11,6 +11,8 @@ import { ProductsDetailComponent } from './views/products-detail/products-detail
 import { CartComponent } from './views/cart/cart.component';
 import { FormsModule } from '@angular/forms';
 import { AboutComponent } from './views/about/about.component';
+import { CompareProductComponent } from './views/compare-product/compare-product.component';
+import { CommonModule } from '@angular/common';
 
 @NgModule({
   declarations: [
@@ -22,13 +24,15 @@ import { AboutComponent } from './views/about/about.component';
     ProductsDetailComponent,
     CartComponent,
     AboutComponent,
+    CompareProductComponent,
 
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    CommonModule
   ],
   providers: [],
   bootstrap: [AppComponent]
