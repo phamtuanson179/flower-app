@@ -1,6 +1,5 @@
 import { Component, OnInit } from "@angular/core";
-import { ActivatedRoute } from "@angular/router";
-import { IFlower } from "src/app/models/flower";
+import { ActivatedRoute, Router } from "@angular/router";
 import { IProduct } from "src/app/models/product";
 import { CartService } from "src/app/services/cart.service";
 import { FlowersService } from "src/app/services/flowers.service";
@@ -14,13 +13,15 @@ import { ProductService } from "src/app/services/product.service";
 })
 export class ProductsDetailComponent implements OnInit {
   public product?: IProduct;
+  public moreProductList: IProduct[] = [];
 
   constructor(
     private activatedRoute: ActivatedRoute,
     public productService: ProductService,
     private flowerService: FlowersService,
     private occasionService: OccasionService,
-    private cartService: CartService
+    private cartService: CartService,
+    private router: Router
   ) {}
 
   ngOnInit(): void {
@@ -31,44 +32,29 @@ export class ProductsDetailComponent implements OnInit {
           this.product = this.productService.productList.find(
             (item) => item.id == id
           );
-          if (this.product?.id) {
-            this.mapFlowerToProduct(this.product);
-            this.mapOccasionToProduct(this.product);
-          }
+          // if (this.product?.id) {
+          //   this.mapFlowerToProduct(this.product);
+          //   this.mapOccasionToProduct(this.product);
+          // }
         }
       });
-    }, 500);
+
+      this.moreProductList = this.randomElementInArray(
+        this.productService?.productList,
+        4
+      );
+    }, 1000);
   }
 
-  private mapFlowerToProduct(product: IProduct) {
-    if (product) {
-      const rawFlowers = product.flowers.map((item: string) => {
-        const [flowerId, amount] = item.split(",");
-        const flower = this.flowerService.flowerList.find(
-          (item) => item.id == flowerId
-        );
-        const newRawFlower: IFlower = {
-          id: flower?.id ?? "",
-          name: flower?.name ?? "",
-          amount: parseInt(amount) ?? 0,
-        };
-        return newRawFlower;
-      });
-      product.rawFlowers = rawFlowers;
-    }
+  
+
+  randomElementInArray(array: any[], amount: number) {
+    const shuffled = array.sort(() => 0.5 - Math.random());
+    return shuffled.slice(0, amount);
   }
 
-  private mapOccasionToProduct(product: IProduct) {
-    if (product) {
-      const rawOccasions = product.occasions.map((occasionId: string) => {
-        return (
-          this.occasionService.occasionList.find(
-            (item) => item.id == occasionId
-          ) ?? { id: "", name: "" }
-        );
-      });
-      product.rawOccasions = rawOccasions;
-    }
+  goToProductDetail(product: IProduct) {
+    this.productService.goToProductDetail(product);
   }
 
   addToCart(product?: IProduct) {
@@ -77,13 +63,15 @@ export class ProductsDetailComponent implements OnInit {
     if (product) this.cartService.addProduct(product);
   }
 
-  handleCompareProduct(event: Event, product?: IProduct) {
-    if (product) {
-      if ((event.target as HTMLInputElement).checked && product?.id) {
-        this.productService.addCompareProduct(product);
-      } else if (!(event.target as HTMLInputElement).checked && product?.id) {
-        this.productService.deleteCompareProduct(product.id);
-      }
+  goToProductsPage() {
+    this.router.navigateByUrl('/products')
+  }
+
+  handleCompareProduct(value: boolean, product?: IProduct) {
+    if (value && product?.id) {
+      this.productService.addCompareProduct(product);
+    } else if (!value && product?.id) {
+      this.productService.deleteCompareProduct(product.id);
     }
   }
 }

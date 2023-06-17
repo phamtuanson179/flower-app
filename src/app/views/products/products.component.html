@@ -1,92 +1,123 @@
-<section class="section-products">
+<section class="">
   <div class="container">
-    <div class="row">
-      <div class="col-3">
-        <div>
-          <h2>Ocassion</h2>
-          <div>
-            <div
-              *ngFor="
-                let occasion of occasionService.occasionList;
-                let i = index
-              "
-            >
-              <div class="form-check">
-                <input
-                  class="form-check-input"
-                  type="checkbox"
-                  [checked]="occasion?.isFiltered"
-                  [id]="'occasion' + i"
-                  (input)="searchByOcassion($event, occasion)"
-                />
-                <label class="form-check-label" for="occasion">
-                  {{ occasion.name }}
-                </label>
+    <div class="row g-4">
+      <div class="col-12 col-lg-3">
+        <div class="row g-3">
+          <div class="col-6 col-lg-12">
+            <div class="card border-primary">
+              <h5 class="card-header">Ocassion</h5>
+              <div class="card-body filter__card">
+                <div
+                  *ngFor="
+                    let occasion of occasionService.occasionList;
+                    let i = index
+                  "
+                >
+                  <div class="form-check">
+                    <input
+                      class="form-check-input"
+                      type="checkbox"
+                      [checked]="occasion?.isFiltered"
+                      [id]="'occasion' + i"
+                      (input)="searchByOcassion($event, occasion)"
+                    />
+                    <label class="form-check-label" for="occasion">
+                      {{ occasion.name }}
+                    </label>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
-        </div>
 
-        <div>
-          <h2>Flowers</h2>
-          <div>
-            <div *ngFor="let flower of flowerService.flowerList; let i = index">
-              <div class="form-check">
-                <input
-                  class="form-check-input"
-                  type="checkbox"
-                  [checked]="flower?.isFiltered"
-                  [id]="'flower' + i"
-                  (input)="searchByFlower($event, flower)"
-                />
-                <label class="form-check-label" for="flower">
-                  {{ flower.name }}
-                </label>
+          <div class="col-6 col-lg-12">
+            <div class="card border-primary">
+              <h5 class="card-header">Flower</h5>
+              <div class="card-body filter__card">
+                <div>
+                  <div
+                    *ngFor="
+                      let flower of flowerService.flowerList;
+                      let i = index
+                    "
+                  >
+                    <div class="form-check">
+                      <input
+                        class="form-check-input"
+                        type="checkbox"
+                        [checked]="flower?.isFiltered"
+                        [id]="'flower' + i"
+                        (input)="searchByFlower($event, flower)"
+                      />
+                      <label class="form-check-label" for="flower">
+                        {{ flower.name }}
+                      </label>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
         </div>
       </div>
-      <div class="col-12 col-md-9">
-        <div class="row">
-          <!-- Single Product -->
+      <div class="col-12 col-lg-9">
+        <div class="row g-3">
           <div
-            class="col-md-6 col-lg-4 col-xl-3"
+            class="col-md-6 col-xl-4"
             *ngFor="let product of products; let i = index"
           >
-            <div id="product-1" class="single-product">
-              <div class="part-1">
-                <!-- <ul>
-                  <li>
-                    <a href="#"><i class="fas fa-shopping-cart"></i></a>
-                  </li>
-                  <li>
-                    <a href="#"><i class="fas fa-heart"></i></a>
-                  </li>
-                </ul> -->
-              </div>
-              <div class="part-2 d-flex justify-content-between">
-                <div>
-                  <h3 class="product-title">{{ product.name }}</h3>
-                  <h4 class="product-price">${{ product.price }}</h4>
+            <div
+              class="card p-1"
+              [ngClass]="{
+                'border border-3 border-warning shadow': product?.isCompared
+              }"
+            >
+              <div
+                [ngClass]="{
+                  'border border-3 border-primary rounded-2': product?.isChosed
+                }"
+              >
+                <div
+                  style="width: 100%; aspect-ratio: 5/6"
+                  class="border-bottom"
+                >
+                  <img
+                    [src]="product?.image"
+                    class="card-img-top"
+                    style="width: 100%; height: 100%; object-fit: contain"
+                    alt="..."
+                  />
                 </div>
-                <div>
-                  <button (click)="addToCart(product)">add to cart</button>
-                  <div class="form-check">
-                    <input
-                      class="form-check-input"
-                      type="checkbox"
-                      [checked]="product?.isCompared"
-                      [id]="'compare' + i"
-                      (input)="handleCompareProduct($event, product)"
-                    />
-                    <label class="form-check-label" for="compare">
-                      So sánh
-                    </label>
+
+                <div class="card-body d-flex flex-column">
+                  <h5 class="card-title">{{ product?.name }}</h5>
+                  <p class="card-text" style="flex: 1">{{ product?.detail }}</p>
+                  <div class="d-flex justify-content-between">
+                    <div class="fs-5">${{ product?.price }}</div>
+                    <div class="text-end">
+                      <button
+                        class="btn btn-primary me-2"
+                        (click)="addToCart(product)"
+                      >
+                        <i class="bi bi-cart"></i>
+                      </button>
+                      <button
+                        class="btn btn-warning me-2"
+                        (click)="
+                          handleCompareProduct(!product?.isCompared, product)
+                        "
+                      >
+                        <i class="bi bi-clipboard2"></i>
+                      </button>
+
+                      <button
+                        class="btn btn-info"
+                        (click)="goToProductDetail(product)"
+                      >
+                        <i class="bi bi-arrow-right-short"></i>
+                      </button>
+                    </div>
                   </div>
-                  <a [routerLink]="'detail/' + product.id">
-                    <button>go</button></a
-                  >
                 </div>
               </div>
             </div>

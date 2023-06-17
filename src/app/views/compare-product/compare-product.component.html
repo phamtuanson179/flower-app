@@ -4,14 +4,15 @@
   data-bs-toggle="modal"
   data-bs-target="#exampleModal"
   style="position: fixed; right: 2rem; bottom: 2rem"
+  [disabled]="getCompareProductList().length <= 0"
 >
-<i class="bi bi-cart"></i>
-
+  <i class="bi bi-cart"></i>
+  Compare
   <span
     class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger"
-    *ngIf="getCompareProductList()?.length"
+    *ngIf="getCompareProductList().length"
   >
-    {{ getCompareProductList()?.length }}
+    {{ getCompareProductList().length }}
   </span>
 </button>
 
@@ -23,7 +24,7 @@
   aria-labelledby="exampleModalLabel"
   aria-hidden="true"
 >
-  <div class="modal-dialog">
+  <div class="modal-dialog compare__dialog">
     <div class="modal-content">
       <div class="modal-header">
         <h1 class="modal-title fs-5" id="exampleModalLabel">Compare Product</h1>
@@ -34,19 +35,40 @@
           aria-label="Close"
         ></button>
       </div>
-      <div class="modal-body">
-        <div class="card-group">
+      <div class="modal-body overflow-auto">
+        <div class="card-group flex-nowrap d-flex g-2">
           <div
             class="card"
+            style="min-width: 15rem; max-width: 15rem"
             *ngFor="let product of getCompareProductList()"
           >
-            <img src="..." class="card-img-top" alt="..." />
+            <div style="width: 100%; aspect-ratio: 5/6" class="border-bottom">
+              <img
+                [src]="product?.image"
+                class="card-img-top"
+                style="width: 100%; height: 100%; object-fit: contain"
+                alt="..."
+              />
+            </div>
             <div class="card-body">
               <h5 class="card-title">{{ product?.name }}</h5>
+
               <p class="card-text">
                 {{ product?.detail }}
               </p>
+              <div>- Include:</div>
+              <small class="d-block" *ngFor="let flower of product?.flowers"
+                ><i>+ {{ flower.name }}: {{ flower?.amount }}</i></small
+              >
+              <div class="d-flex gap-2 flex-wrap mt-2">
+                <small
+                  class="border rounded-pill px-3 py-1 border-2 border-warning text-nowrap"
+                  *ngFor="let occasion of product?.rawOccasions"
+                  ><i>{{ occasion.name }}</i></small
+                >
+              </div>
             </div>
+
             <div class="card-footer">
               <small class="text-body-secondary">${{ product?.price }}</small>
             </div>

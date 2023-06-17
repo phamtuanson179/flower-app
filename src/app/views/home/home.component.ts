@@ -52,6 +52,8 @@ export class HomeComponent implements OnInit {
     this.occasionService.occasionList.forEach(
       (item) => (item.isFiltered = false)
     );
+
+   
     this.occasionService.addFilterOccasionList(occasion);
     this.router.navigateByUrl("/products");
   }

@@ -13,6 +13,8 @@ import { FormsModule } from '@angular/forms';
 import { AboutComponent } from './views/about/about.component';
 import { CompareProductComponent } from './views/compare-product/compare-product.component';
 import { CommonModule } from '@angular/common';
+import { SignInComponent } from './views/sign-in/sign-in.component';
+import { SignUpComponent } from './views/sign-up/sign-up.component';
 
 @NgModule({
   declarations: [
@@ -25,6 +27,8 @@ import { CommonModule } from '@angular/common';
     CartComponent,
     AboutComponent,
     CompareProductComponent,
+    SignInComponent,
+    SignUpComponent,
 
   ],
   imports: [

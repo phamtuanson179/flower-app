@@ -1,55 +1,60 @@
-import { Injectable } from "@angular/core"
-import { IProduct } from "../models/product"
+import { Injectable } from "@angular/core";
+import { IProduct } from "../models/product";
+import { ProductService } from "src/app/services/product.service";
 
-@Injectable({ providedIn: 'root' })
-
+@Injectable({ providedIn: "root" })
 export class CartService {
-    public productList: IProduct[] = []
+  constructor(private productService: ProductService) {}
 
-    constructor() {
+  addProduct(product: IProduct) {
+    if (product.isChosed) {
+      return alert("San pham da ton tai");
     }
 
-    getCart() {
-        return this.productList
+    product.amount = 1;
+    product.isChosed = true;
+  }
+
+  deleteProduct(productId: string) {
+    const deleteProduct = this.productService.productList.find(
+      (product: IProduct) => product.id == productId
+    );
+
+    if (deleteProduct) {
+      deleteProduct.isChosed = false;
+      deleteProduct.amount = 0;
     }
+  }
 
-    addProduct(product: IProduct) {
-        if (this.productList.find((item: IProduct) =>
-            item.id == product.id
-        )) {
-            return alert("San pham da ton tai")
-        }
+  updateAmount(productId: string, amount: number) {
+    let product = this.productService.productList.find((item: IProduct) => {
+      item.id == productId;
+    });
 
-        product.amount = 1
-
-        return this.productList.push(product)
+    if (product) {
+      product.amount = amount;
     }
+  }
 
-    deleteProduct(productId: string) {
-        const newList = this.productList.filter((product: IProduct) =>
-            product.id != productId
-        )
-        this.productList = newList
-    }
+  total() {
+    let res = 0;
+    this.productService.productList
+      .filter((item) => item.isChosed)
+      .forEach((item: IProduct) => {
+        res += item.amount * item.price;
+      });
 
-    updateAmount(productId: string, amount: number) {
-        let product = this.productList.find((item: IProduct) => {
-            item.id == productId
-        })
+    return res;
+  }
 
-        if (product) { product.amount = amount }
-    }
+  totalAmount() {
+    let res = 0;
+    this.productService.productList
+      .filter((item) => item.isChosed)
+      .forEach((item: IProduct) => {
+        res += item.amount;
+      });
 
-    total() {
-        let res = 0
-        this.productList.forEach((item: IProduct) => {
-            res += item.amount * item.price
-            console.log(res, item.amount, item.price);
-
-        })
-
-        return res
-    }
-
+    return res;
+  }
 }
-

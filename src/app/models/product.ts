@@ -13,8 +13,9 @@ export interface IProduct {
   detail: string;
   occasions: string[];
   rawOccasions: IOccasion[];
-  flowers: string[];
-  rawFlowers: IFlower[];
+  flowers: IFlower[];
   isCompared: boolean;
   isChosed: boolean;
+  
+  note:string
 }

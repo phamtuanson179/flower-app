@@ -27,26 +27,23 @@ export class ProductsComponent {
   ngOnInit(): void {
     setTimeout(() => {
       this.products = this.productService.productList;
-      this.filter()
-    }, 500);
+      this.filter();
+    }, 1000);
   }
 
   filter() {
     //step 1: filter flower
     const filteredProductListAfterFlower =
       this.productService.productList.filter((product: IProduct) => {
-        const flowerListStringOfProduct = product.flowers?.join(".");
+        const flowerIdListStringOfProduct = product.flowers?.map(
+          (item) => item.id
+        );
         let res = true;
 
         this.flowerService.flowerList
-          .filter((item) => item.isFiltered)
+          .filter((item: IFlower) => item.isFiltered)
           ?.forEach((flower: IFlower) => {
-            // const regex = new RegExp(`.*${flower.id},.*`)
-            // if (!regex.test(flowerListStringOfProduct)) {
-            //   res = false;
-            // }
-
-            if (!flowerListStringOfProduct?.includes(`${flower.id},`)) {
+            if (!flowerIdListStringOfProduct?.includes(flower.id)) {
               res = false;
             }
           });
@@ -97,10 +94,14 @@ export class ProductsComponent {
     this.cartService.addProduct(product);
   }
 
-  handleCompareProduct(event: Event, product: IProduct) {
-    if ((event.target as HTMLInputElement).checked && product?.id) {
+  goToProductDetail(product: IProduct) {
+    this.productService.goToProductDetail(product);
+  }
+
+  handleCompareProduct(value: boolean, product: IProduct) {
+    if (value && product?.id) {
       this.productService.addCompareProduct(product);
-    } else if (!(event.target as HTMLInputElement).checked && product?.id) {
+    } else if (!value && product?.id) {
       this.productService.deleteCompareProduct(product.id);
     }
   }

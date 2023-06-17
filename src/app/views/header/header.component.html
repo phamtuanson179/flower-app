@@ -1,22 +1,30 @@
-<div style="position: fixed; top: 0; left: 0; width: 100%; z-index: 1;">
+<div>
+  <!-- style="position: fixed; top: 0; left: 0; width: 100%; z-index: 1" -->
   <nav class="py-3 bg-body-tertiary border-bottom">
     <div class="container d-flex flex-wrap">
       <ul class="nav me-auto">
         <li class="nav-item">
           <a
-            class="nav-link link-body-emphasis px-2 active"
+            class="nav-link link-body-emphasis px-2"
+            routerLinkActive="bg-secondary rounded-3 p-2 text-white"
             aria-current="page"
             routerLink="home"
             >Home</a
           >
         </li>
-        <li class="nav-item">
-          <a class="nav-link link-body-emphasis px-2" routerLink="products"
+        <li class="nav-item" (click)="handleWhenGoToProduct()">
+          <a
+            class="nav-link link-body-emphasis px-2"
+            routerLink="products"
+            routerLinkActive="bg-secondary rounded-3 p-2 text-white"
             >Products</a
           >
         </li>
         <li class="nav-item">
-          <a class="nav-link link-body-emphasis px-2" routerLink="about"
+          <a
+            class="nav-link link-body-emphasis px-2"
+            routerLink="about"
+            routerLinkActive="bg-secondary rounded-3 p-2 text-white"
             >About</a
           >
         </li>
@@ -28,19 +36,26 @@
         <li class="nav-item">
           <a href="#" class="nav-link link-body-emphasis px-2">Sign up</a>
         </li> -->
+        <!-- <div class="d-flex gap-2 me-2">
+          <a class="btn btn-success" href="tel:1800 6789">1800 6789</a>
+        </div> -->
+        <app-sign-in></app-sign-in>
         <app-cart></app-cart>
+        <!-- <app-sign-up></app-sign-up> -->
       </ul>
     </div>
   </nav>
   <header class="py-3 mb-4 border-bottom bg-white">
-    <div class="container d-flex flex-wrap justify-content-center">
+    <div
+      class="container d-flex flex-wrap justify-content-center align-items-center"
+    >
       <a
         href="/"
         class="d-flex align-items-center mb-3 mb-lg-0 me-lg-auto link-body-emphasis text-decoration-none"
       >
-        <img src="assets/logo.png" alt="" style="height: 3rem;">
-        <!-- <span class="fs-4"></span> -->
+        <img src="assets/logo.png" alt="" style="height: 3rem" />
       </a>
+      <div></div>
       <!-- <form class="col-12 col-lg-auto mb-3 mb-lg-0" role="search">
       <input
         type="search"

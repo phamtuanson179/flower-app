@@ -7,10 +7,7 @@ import { ProductService } from 'src/app/services/product.service';
   styleUrls: ['./compare-product.component.scss']
 })
 export class CompareProductComponent {
-  constructor(public productService: ProductService){
-
-  }
-
+  constructor(public productService: ProductService){}
 
   getCompareProductList(){
     return this.productService.productList.filter(item=>item.isCompared)

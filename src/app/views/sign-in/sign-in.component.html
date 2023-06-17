@@ -1,0 +1,104 @@
+<!-- Button trigger modal -->
+<button
+  type="button"
+  class="btn btn-warning me-2"
+  data-bs-toggle="modal"
+  data-bs-target="#signIn"
+  style="z-index: 1051"
+>
+  Sign In
+</button>
+
+<!-- Modal -->
+<div
+  class="modal fade"
+  id="signIn"
+  tabindex="-1"
+  aria-labelledby="signIn"
+  aria-hidden="true"
+>
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="signIn">Sign in</h1>
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="modal"
+          aria-label="Close"
+        ></button>
+      </div>
+      <div class="modal-body">
+        <form #signInForm="ngForm" (ngSubmit)="onSubmit(signInForm.value)">
+          <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label required"
+              >Email address</label
+            >
+            <input
+              type="email"
+              class="form-control"
+              id="exampleInputEmail1"
+              aria-describedby="emailHelp"
+              ngModel
+              name="email"
+              required
+              pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"
+            />
+            <div
+              id="emailHelp"
+              class="form-text text-danger"
+              *ngIf="signInForm.controls['email']?.errors?.['required'] && (signInForm.controls['email'].dirty || signInForm.controls['email'].touched)"
+            >
+              Field required!
+            </div>
+
+            <div
+              id="emailHelp"
+              class="form-text text-danger"
+              *ngIf="signInForm.controls['email']?.errors?.['pattern'] && (signInForm.controls['email'].dirty || signInForm.controls['email'].touched)"
+            >
+              Wrong email format!
+            </div>
+          </div>
+          <div class="mb-3">
+            <label for="exampleInputPassword1" class="form-label required"
+              >Password</label
+            >
+            <input
+              type="password"
+              class="form-control"
+              id="exampleInputPassword1"
+              ngModel
+              name="password"
+              required
+            />
+            <div
+              id="emailHelp"
+              class="form-text text-danger"
+              *ngIf="signInForm.controls['password']?.errors?.['required'] &&( signInForm.controls['password'].dirty || signInForm.controls['password'].touched)"
+            >
+              Field required!
+            </div>
+          </div>
+          <div class="d-flex gap-2 align-items-center">
+            <button
+              type="submit"
+              class="btn btn-primary"
+              [disabled]="signInForm.invalid"
+            >
+              Submit
+            </button>
+            <span class="text-danger fw-bold">{{ error }}</span>
+            <span class="text-success fw-bold">{{ success }}</span>
+          </div>
+        </form>
+      </div>
+      <!-- <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+          Close
+        </button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div> -->
+    </div>
+  </div>
+</div>

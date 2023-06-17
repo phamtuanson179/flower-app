@@ -1,174 +1,142 @@
-<div class="flower-details">
-  <div class="flower-image">
-    <img src="001_tinh-dau-tho-ngay.jpg" alt="Hình ảnh hoa" />
+<div class="row pt-3 g-5">
+  <div class="col-4">
+    <div>
+      <img [src]="product?.image" alt="Hình ảnh hoa" class="w-100 h-100" />
+    </div>
+    <div class="mt-3">
+      <div class="fs-5 fw-bold">Occasions</div>
+      <div class="d-flex gap-2 flex-wrap mt-2">
+        <small
+          class="border rounded-pill px-3 py-1 border-2 border-warning text-nowrap"
+          *ngFor="let occasion of product?.rawOccasions"
+          ><i>{{ occasion.name }}</i></small
+        >
+      </div>
+    </div>
   </div>
-  <div class="flower-info">
-    <h2>{{ product?.name }}</h2>
-    <p>{{ product?.detail }}</p>
-    <!-- <ul>
-                <li>Đặc điểm 1</li>
-                <li>Đặc điểm 2</li>
-                <li>Đặc điểm 3</li>
-            </ul> -->
-
-    <!-- <div class="special-offers">
-                <h4>Thông tin ưu đãi đặc biệt</h4>
-                <ul>
-                    <li>Ưu đãi số 1</li>
-                    <li>Ưu đãi số 2</li>
-                    <li>Ưu đãi số 3</li>
-                </ul>
-            </div> -->
-
-    <p>Giá: ${{ product?.price }}</p>
-    <div class="add-to-cart">
-      <button (click)="addToCart(product)">Add to cart</button>
-    </div>
-    <div class="form-check">
-      <input
-        class="form-check-input"
-        type="checkbox"
-        [checked]="product?.isCompared"
-        id="flexCheckChecked"
-        (input)="handleCompareProduct($event, product)"
-      />
-      <label class="form-check-label" for="flexCheckChecked"> So sánh </label>
+  <div class="col-8">
+    <div class="fs-1 fw-bold text-primary">{{ product?.name }}</div>
+    <div class="fs-5 fw-bold text-danger">Giá: ${{ product?.price }}</div>
+    <i class="fw-bold"
+      >Giá đã bao gồm 10% VAT - Sản phẩm chưa bao gồm phí giao tân nơi (Chi
+      tiết)</i
+    >
+    <div class="mt-1">
+      <button (click)="addToCart(product)" class="btn btn-primary">
+        Add to cart
+      </button>
     </div>
 
-    <!-- <div class="buy-now">
-                <button>Mua ngay</button>
-            </div> -->
-    <!-- <div class="call-now">
-                <button>Gọi ngay: 1800 6789</button>
-            </div> -->
+    <hr />
+
+    <div class="mt-3">
+      <div class="fs-5 fw-bold">Detail</div>
+      <div>- {{ product?.detail }}</div>
+      <div>- Include:</div>
+      <small class="d-block" *ngFor="let flower of product?.flowers"
+        ><i>+ {{ flower.name }}: {{ flower?.amount }}</i></small
+      >
+    </div>
+
+    <div class="alert alert-warning mt-3" role="alert">
+      <i>{{ product?.note }}</i>
+    </div>
+
+    <div class="alert alert-info mt-3" role="alert">
+      <div *ngFor="let offer of product?.specialOffer">
+        <i>- {{ offer }}</i>
+      </div>
+    </div>
+
+    <div class="d-flex justify-content-between align-items-center">
+      <div class="d-flex gap-2">
+        <a class="btn btn-success" href="tel:1800 6789">1800 6789</a>
+      </div>
+      <div class="form-check form-switch">
+        <input
+          class="form-check-input"
+          type="checkbox"
+          role="switch"
+          [checked]="product?.isCompared"
+          id="flexSwitchCheckDefault"
+          (click)="handleCompareProduct(!product?.isCompared, product)"
+        />
+        <label class="form-check-label" for="flexSwitchCheckDefault"
+          >Compare</label
+        >
+      </div>
+    </div>
   </div>
 </div>
 
-<div class="flower-groups">
-  <h3>Occasion</h3>
-  <ul>
-    <li *ngFor="let occasion of product?.rawOccasions">
-      <button class="tag-button" data-tag="tag1">#{{ occasion?.name }}</button>
-    </li>
-  </ul>
-</div>
-
-<!-- <div id="tag1" class="tag-posts">
-</div> -->
-
-<!-- Nội dung phần Tại sao bạn nên dùng dịch vụ của chúng tôi -->
-<!-- <div class="container">
-  <div class="centered-content">
-    <h2>Tại sao bạn nên dùng dịch vụ của chúng tôi?</h2>
-    <div class="row">
-      <div class="col">
-        <div class="feature">
-          <i class="fas fa-check"></i>
-          <h3>Nội dung 1</h3>
-          <p>Nội dung phụ 1</p>
-        </div>
-      </div>
-      <div class="col">
-        <div class="feature">
-          <i class="fas fa-check"></i>
-          <h3>Nội dung 2</h3>
-          <p>Nội dung phụ 2</p>
-        </div>
-      </div>
-      <div class="col">
-        <div class="feature">
-          <i class="fas fa-check"></i>
-          <h3>Nội dung 3</h3>
-          <p>Nội dung phụ 3</p>
-        </div>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col">
-        <div class="feature">
-          <i class="fas fa-check"></i>
-          <h3>Nội dung 4</h3>
-          <p>Nội dung phụ 4</p>
-        </div>
-      </div>
-      <div class="col">
-        <div class="feature">
-          <i class="fas fa-check"></i>
-          <h3>Nội dung 5</h3>
-          <p>Nội dung phụ 5</p>
-        </div>
-      </div>
-      <div class="col">
-        <div class="feature">
-          <i class="fas fa-check"></i>
-          <h3>Nội dung 6</h3>
-          <p>Nội dung phụ 6</p>
-        </div>
-      </div>
-    </div>
-  </div>
-</div> -->
-
-<div class="flowers">
-  <h2>Những mẫu hoa cùng loại khác</h2>
+<div>
+  <div class="fs-3 fw-bold mb-3">Những mẫu hoa cùng loại khác</div>
   <div class="row">
-    <div class="col-4">
-      <img src="flower1.jpg" alt="Hoa 1" />
-      <h3>{{ productService?.productList?.[0]?.name }}</h3>
-      <p>${{ productService?.productList?.[0]?.price }}</p>
+    <div class="col-3" *ngFor="let otherProduct of moreProductList">
+      <div
+        class="card p-1"
+        [ngClass]="{
+          'border border-3 border-warning shadow': otherProduct?.isCompared
+        }"
+      >
+        <div
+          [ngClass]="{
+            'border border-3 border-primary rounded-2': otherProduct?.isChosed
+          }"
+        >
+          <div style="width: 100%; aspect-ratio: 5/6" class="border-bottom">
+            <img
+              [src]="otherProduct?.image"
+              class="card-img-top"
+              style="width: 100%; height: 100%; object-fit: contain"
+              alt="..."
+            />
+          </div>
+
+          <div class="card-body d-flex flex-column">
+            <h5 class="card-title">{{ otherProduct?.name }}</h5>
+            <p class="card-text" style="flex: 1">{{ otherProduct?.detail }}</p>
+            <div class="d-flex justify-content-between">
+              <div class="fs-5">${{ otherProduct?.price }}</div>
+              <div class="text-end">
+                <button
+                  class="btn btn-primary me-2"
+                  (click)="addToCart(otherProduct)"
+                >
+                  <i class="bi bi-cart"></i>
+                </button>
+                <button
+                  class="btn btn-warning me-2"
+                  (click)="
+                    handleCompareProduct(
+                      !otherProduct?.isCompared,
+                      otherProduct
+                    )
+                  "
+                >
+                  <i class="bi bi-clipboard2"></i>
+                </button>
+
+                <button
+                  class="btn btn-info"
+                  (click)="goToProductDetail(otherProduct)"
+                >
+                  <i class="bi bi-arrow-right-short"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
-  </div>
-
-  <div class="col-4">
-    <img src="flower1.jpg" alt="Hoa 1" />
-    <h3>{{ productService?.productList?.[1]?.name }}</h3>
-    <p>${{ productService?.productList?.[1]?.price }}</p>
-  </div>
-
-  <div class="col-4">
-    <img src="flower1.jpg" alt="Hoa 1" />
-    <h3>{{ productService?.productList?.[2]?.name }}</h3>
-    <p>${{ productService?.productList?.[2]?.price }}</p>
   </div>
 </div>
 
-<!-- Phần nội dung khác của trang web -->
-
-<!-- <footer>
-  <div class="footer-container">
-    <div class="footer-column">
-      <h3>Thông tin</h3>
-      <ul>
-        <li><a href="#">Về chúng tôi</a></li>
-        <li><a href="#">Chính sách bảo mật</a></li>
-        <li><a href="#">Điều khoản sử dụng</a></li>
-        <li><a href="#">Liên hệ</a></li>
-      </ul>
-    </div>
-    <div class="footer-column">
-      <h3>Hỗ trợ</h3>
-      <ul>
-        <li><a href="#">Câu hỏi thường gặp</a></li>
-        <li><a href="#">Hướng dẫn đặt hàng</a></li>
-        <li><a href="#">Trạng thái đơn hàng</a></li>
-      </ul>
-    </div>
-    <div class="footer-column">
-      <h3>Kết nối với chúng tôi</h3>
-      <ul class="social-icons">
-        <li>
-          <a href="#"><i class="fa fa-facebook"></i></a>
-        </li>
-        <li>
-          <a href="#"><i class="fa fa-twitter"></i></a>
-        </li>
-        <li>
-          <a href="#"><i class="fa fa-instagram"></i></a>
-        </li>
-        <li>
-          <a href="#"><i class="fa fa-pinterest"></i></a>
-        </li>
-      </ul>
-    </div>
-  </div>
-</footer> -->
+<div class="text-center mt-3">
+  <button
+    class="btn btn-light border rounded-pill border-primary text-primary"
+    (click)="goToProductsPage()"
+  >
+    Xem thêm
+  </button>
+</div>
