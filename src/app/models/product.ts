@@ -16,6 +16,5 @@ export interface IProduct {
   flowers: IFlower[];
   isCompared: boolean;
   isChosed: boolean;
-  
-  note:string
+  note: string;
 }
