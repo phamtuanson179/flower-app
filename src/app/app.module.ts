@@ -29,7 +29,6 @@ import { SignUpComponent } from './views/sign-up/sign-up.component';
     CompareProductComponent,
     SignInComponent,
     SignUpComponent,
-
   ],
   imports: [
     BrowserModule,

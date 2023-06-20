@@ -46,10 +46,4 @@ testem.log
 Thumbs.db
 
 # env
-<<<<<<< HEAD
 .env
-=======
-.env
-
-
->>>>>>> main
